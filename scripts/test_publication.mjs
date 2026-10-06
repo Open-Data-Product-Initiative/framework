@@ -20,6 +20,7 @@ assert.match(index, /CC BY 4\.0/);
 assert.match(index, /Draft publication/);
 assert.doesNotMatch(index, /\n---\n/);
 assert.doesNotMatch(index, /(?:href|src)="\//);
+assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must not link to Markdown source paths");
 
 let lastChapterPosition = -1;
 for (const chapter of manifest.chapters) {

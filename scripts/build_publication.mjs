@@ -10,6 +10,9 @@ const distDirectory = path.join(root, "dist");
 
 const manifest = JSON.parse(await fs.readFile(path.join(publicationDirectory, "manifest.json"), "utf8"));
 const template = await fs.readFile(path.join(publicationDirectory, "template.html"), "utf8");
+const chapterIdBySource = new Map(
+  manifest.chapters.map((chapter) => [path.posix.normalize(chapter.source), chapter.id])
+);
 
 const escapeHtml = (value) => String(value)
   .replaceAll("&", "&amp;")
@@ -31,7 +34,28 @@ function slugify(value) {
     .replace(/^-|-$/g, "") || "section";
 }
 
-function renderMarkdown(source, chapterId) {
+function resolvePublicationLink(href, chapter) {
+  if (!href || href.startsWith("#") || /^[a-z][a-z0-9+.-]*:/i.test(href)) return href;
+
+  const [rawPath, rawFragment = ""] = href.split("#", 2);
+  if (!rawPath.toLowerCase().endsWith(".md")) return href;
+
+  const resolvedSource = path.posix.normalize(
+    path.posix.join(path.posix.dirname(chapter.source), decodeURIComponent(rawPath))
+  );
+  const targetChapterId = chapterIdBySource.get(resolvedSource);
+  if (!targetChapterId) {
+    throw new Error(
+      `Markdown link from ${chapter.source} targets ${href}, but ${resolvedSource} is not a published chapter`
+    );
+  }
+
+  return rawFragment
+    ? `#${targetChapterId}-${slugify(decodeURIComponent(rawFragment))}`
+    : `#${targetChapterId}`;
+}
+
+function renderMarkdown(source, chapter) {
   const md = new MarkdownIt({ html: false, linkify: true, typographer: true });
   const seen = new Map();
   const headings = [];
@@ -47,7 +71,7 @@ function renderMarkdown(source, chapterId) {
       const displayLevel = Math.min(6, originalLevel + 1);
       const inline = state.tokens[index + 1];
       const text = inline?.content ?? "Section";
-      const base = `${chapterId}-${slugify(text)}`;
+      const base = `${chapter.id}-${slugify(text)}`;
       const occurrence = (seen.get(base) ?? 0) + 1;
       seen.set(base, occurrence);
       const id = occurrence === 1 ? base : `${base}-${occurrence}`;
@@ -63,6 +87,13 @@ function renderMarkdown(source, chapterId) {
   });
 
   md.renderer.rules.heading_open = (tokens, index, options, env, self) => defaultHeadingOpen(tokens, index, options, env, self);
+  const defaultLinkOpen = md.renderer.rules.link_open
+    ?? ((tokens, index, options, env, self) => self.renderToken(tokens, index, options));
+  md.renderer.rules.link_open = (tokens, index, options, env, self) => {
+    const href = tokens[index].attrGet("href");
+    tokens[index].attrSet("href", resolvePublicationLink(href, chapter));
+    return defaultLinkOpen(tokens, index, options, env, self);
+  };
   md.renderer.rules.heading_close = (tokens, index, options, env, self) => {
     const opening = [...tokens.slice(0, index)].reverse().find((token) => token.type === "heading_open");
     const id = opening?.meta?.id;
@@ -81,7 +112,7 @@ function renderMarkdown(source, chapterId) {
 const chapters = [];
 for (const chapter of manifest.chapters) {
   const source = await fs.readFile(path.join(root, chapter.source), "utf8");
-  const rendered = renderMarkdown(source, chapter.id);
+  const rendered = renderMarkdown(source, chapter);
   chapters.push({ ...chapter, ...rendered });
 }
 
