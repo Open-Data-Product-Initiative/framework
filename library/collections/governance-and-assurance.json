@@ -1,0 +1,18 @@
+{
+  "id": "governance-and-assurance",
+  "title": "Governance and Assurance",
+  "purpose": "Sources relevant to accountability, policy, controls, evidence, service assurance, risk and compliance.",
+  "source_ids": [
+    "nist-ai-rmf-1.0",
+    "nist-csf-2.0",
+    "nist-privacy-framework-1.0",
+    "nist-sp-800-53r5",
+    "w3c-prov-o",
+    "w3c-dqv",
+    "w3c-odrl-2.2",
+    "w3c-shacl",
+    "eu-ai-act-2024-1689",
+    "iso-iec-42001-2023",
+    "edm-council-dcam"
+  ]
+}

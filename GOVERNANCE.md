@@ -48,6 +48,12 @@ Changes to Core principles, function or capability meanings, authority boundarie
 
 Editorial changes must not alter normative meaning.
 
+## External evidence and generated proposals
+
+External material informs decisions but does not acquire framework authority merely by appearing in the evidence library. Maintainers must consider the source's authority, scope, currency, rights and compatibility with the framework's vendor-neutral Core.
+
+LLM output is an editorial proposal, not evidence, consensus or an accepted framework change. Generated proposals must preserve source identifiers and distinguish sourced claims from synthesis. Acceptance remains subject to the normal decision process and normative change controls.
+
 ## Releases
 
 Only a versioned release approved through project governance is an adopted framework release. Files marked `draft` are proposals and must not be represented as adopted requirements.

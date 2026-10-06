@@ -1,0 +1,13 @@
+{
+  "id": "ai-and-agent-governance",
+  "title": "AI and Agent Governance",
+  "purpose": "Sources relevant to AI risk, agent workflow boundaries, oversight, provenance, monitoring and beneficial outcomes.",
+  "source_ids": [
+    "nist-ai-rmf-1.0",
+    "nist-ai-600-1-genai-profile",
+    "w3c-prov-o",
+    "oecd-ai-principles-2024",
+    "eu-ai-act-2024-1689",
+    "iso-iec-42001-2023"
+  ]
+}

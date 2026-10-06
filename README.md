@@ -86,6 +86,8 @@ AI agents actively participate in discovery, product operations, workflows, assu
 - [`glossary.md`](glossary.md) — common terminology
 - [`profiles/`](profiles/) — Core implementation profiles
 - [`crosswalks/`](crosswalks/) — mappings to other frameworks and standards
+- [`library/`](library/) — governed external evidence catalog and thematic source collections
+- [`enrichment/`](enrichment/) — proposal and review workflow for evidence-grounded content enrichment
 - `assets/` — framework diagrams and other publication assets
 - `publication/` — shared HTML and PDF templates, styles and publication manifest
 - `scripts/build_publication.mjs` — deterministic Markdown-to-HTML publication build
@@ -95,6 +97,7 @@ AI agents actively participate in discovery, product operations, workflows, assu
 - `CONTRIBUTING.md` — contribution requirements
 - `CHANGELOG.md` — notable framework changes
 - `scripts/validate_repository.py` — repository integrity checks
+- `scripts/validate_library.py` — evidence catalog and collection integrity checks
 
 ## Start here
 
@@ -132,6 +135,22 @@ Markdown is the normative, human-maintained source of truth for this framework r
 The responsive standalone HTML publication and the PDF are generated from the same ordered Markdown sources in `publication/manifest.json`. The HTML uses a dark, collapsible chapter navigation and a light reading area; below desktop width, navigation becomes an accessible hamburger-controlled drawer.
 
 Generated publication files should not be manually edited and are not independent normative sources.
+
+## Evidence library and assisted enrichment
+
+The framework can draw on a governed library of external standards, regulation, research and professional guidance. The library records source authority, currency, rights, intended uses and relevant framework capabilities. It is evidence for editorial decisions; it is not automatically part of the framework and does not transfer external requirements into the Core.
+
+LLM-assisted enrichment is proposal-only. The tooling retrieves material from the local evidence index, requires source identifiers for claims and writes a review artifact outside the normative Markdown. A maintainer must assess relevance, source authority, licensing, architectural fit and wording before manually accepting any change.
+
+The workflow is:
+
+```text
+Catalog sources -> retrieve permitted local copies -> build index
+    -> prepare or run an enrichment proposal -> validate citations
+    -> human review -> deliberate Markdown change
+```
+
+See the [evidence library](library/README.md), [source policy](library/source-policy.md) and [enrichment workflow](enrichment/README.md). A model or provider is not required to build and inspect a proposal prompt, and no provider is made authoritative by the tooling.
 
 Install dependencies and run the complete publication pipeline:
 

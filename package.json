@@ -7,7 +7,12 @@
   "scripts": {
     "build": "node scripts/build_publication.mjs",
     "build:pdf": "node scripts/render_pdf.mjs",
-    "test": "python3 scripts/validate_repository.py && npm run build && node scripts/test_publication.mjs",
+    "library:validate": "python3 scripts/validate_library.py",
+    "library:ingest": "python3 scripts/ingest_library.py",
+    "library:index": "python3 scripts/build_library_index.py",
+    "enrich:propose": "python3 scripts/propose_enrichment.py",
+    "enrich:validate": "python3 scripts/validate_enrichment.py",
+    "test": "python3 scripts/validate_repository.py && npm run library:validate && npm run build && node scripts/test_publication.mjs",
     "test:pdf": "node scripts/validate_pdf.mjs",
     "publication": "npm test && npm run build:pdf && npm run test:pdf"
   },

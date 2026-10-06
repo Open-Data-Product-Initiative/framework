@@ -9,6 +9,7 @@ The Data Product Operating Framework is developed through reviewable, evidence-l
 3. Explain the problem before prescribing a solution.
 4. Identify affected framework identifiers, documents and ODPS-family standards.
 5. Separate observed evidence from assumptions and preferences.
+6. For evidence-based enrichment, register sources in `library/catalog.json` and cite their stable source identifiers.
 
 Use an issue for material semantic changes before opening a pull request. Editorial corrections can proceed directly to a focused pull request.
 
@@ -24,6 +25,8 @@ A contribution must:
 - update every affected capability, profile, crosswalk and assessment rule
 - include migration guidance when compatibility is affected
 - avoid unsupported maturity, conformance, adoption or value claims
+- distinguish an external source's statement from a framework decision
+- record any LLM assistance without treating generated text as evidence
 
 Profiles may add contextual requirements but must not silently redefine the Core. A profile must not rename Core capabilities, fork Core terminology, create a separate maturity model or redefine an ODPS-family standard.
 
@@ -36,6 +39,15 @@ python3 scripts/validate_repository.py
 ```
 
 The validation must pass before review. Reviewers may request additional semantic or standards-alignment evidence that cannot be automated.
+
+For library or assisted-enrichment changes, also run:
+
+```sh
+npm run library:validate
+npm run library:index
+```
+
+If a generated proposal is attached to a change, validate it with `npm run enrich:validate -- path/to/proposal.json`. A proposal never authorizes an edit by itself.
 
 ## Pull requests
 

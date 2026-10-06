@@ -1,0 +1,14 @@
+{
+  "id": "semantics-and-interoperability",
+  "title": "Semantics and Interoperability",
+  "purpose": "Sources relevant to portable metadata, vocabulary, relationships, provenance, policies and machine validation.",
+  "source_ids": [
+    "w3c-dcat-3",
+    "w3c-prov-o",
+    "w3c-dqv",
+    "w3c-odrl-2.2",
+    "w3c-skos",
+    "w3c-shacl",
+    "wilkinson-fair-principles-2016"
+  ]
+}

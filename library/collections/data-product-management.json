@@ -1,0 +1,10 @@
+{
+  "id": "data-product-management",
+  "title": "Data Product Management",
+  "purpose": "Sources relevant to product definition, ownership, discoverability, reuse and enterprise operating practices.",
+  "source_ids": [
+    "w3c-dcat-3",
+    "wilkinson-fair-principles-2016",
+    "edm-council-dcam"
+  ]
+}

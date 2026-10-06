@@ -9,3 +9,10 @@ dist/
 output/pdf/
 site/
 tmp/pdfs/
+library/cache/
+library/extracted/
+library/index/
+enrichment/proposals/*.json
+enrichment/proposals/*.md
+!enrichment/proposals/README.md
+enrichment/reviews/*.json
