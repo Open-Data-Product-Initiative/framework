@@ -16,6 +16,8 @@ assert.match(index, /id="nav-backdrop"/);
 assert.match(index, /<a class="sidebar-title" href="#overview" data-nav-target="overview" aria-label="Back to the beginning">/);
 assert.match(index, /<a class="mobile-title" href="#overview" aria-label="Back to the beginning">/);
 assert.match(index, /assets\/framework\.js/);
+assert.match(index, /<div class="hero-copy">/);
+assert.match(index, /<div class="hero-copy">[\s\S]+?<figure class="overview-figure">/);
 assert.match(print, /class="print-cover"/);
 assert.match(index, new RegExp(`downloads/${manifest.pdfFilename.replaceAll(".", "\\.")}`));
 assert.match(index, /CC BY 4\.0/);

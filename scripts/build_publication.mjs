@@ -169,18 +169,20 @@ const mobileHeader = `<header class="mobile-header">
 
 const hero = `<header class="web-hero" id="overview" data-scroll-section>
   <div class="hero-inner">
-    <p class="eyebrow">Open Data Product Initiative · Framework publication</p>
-    <h1>${escapeHtml(manifest.title)}</h1>
-    <p class="hero-summary">${escapeHtml(manifest.description)}</p>
-    <div class="hero-meta">
-      <span><strong>Version</strong> ${escapeHtml(manifest.version)}</span>
-      <span><strong>Status</strong> ${escapeHtml(manifest.status)}</span>
-      <span><strong>Published</strong> ${escapeHtml(manifest.date)}</span>
-      <span><strong>License</strong> ${escapeHtml(manifest.license)}</span>
-    </div>
-    <div class="hero-actions">
-      <a class="button button--primary" href="downloads/${escapeHtml(manifest.pdfFilename)}">Download PDF</a>
-      <a class="button button--secondary" href="${escapeHtml(manifest.repositoryUrl)}">View source on GitHub</a>
+    <div class="hero-copy">
+      <p class="eyebrow">Open Data Product Initiative · Framework publication</p>
+      <h1>${escapeHtml(manifest.title)}</h1>
+      <p class="hero-summary">${escapeHtml(manifest.description)}</p>
+      <div class="hero-meta">
+        <span><strong>Version</strong> ${escapeHtml(manifest.version)}</span>
+        <span><strong>Status</strong> ${escapeHtml(manifest.status)}</span>
+        <span><strong>Published</strong> ${escapeHtml(manifest.date)}</span>
+        <span><strong>License</strong> ${escapeHtml(manifest.license)}</span>
+      </div>
+      <div class="hero-actions">
+        <a class="button button--primary" href="downloads/${escapeHtml(manifest.pdfFilename)}">Download PDF</a>
+        <a class="button button--secondary" href="${escapeHtml(manifest.repositoryUrl)}">View source on GitHub</a>
+      </div>
     </div>
     <figure class="overview-figure">
       <img src="assets/framework-overview-v0.1.png" alt="The Core connects DIRECT, DEFINE, OPERATE and ASSURE through fourteen capabilities and a continuous feedback loop.">
