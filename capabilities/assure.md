@@ -32,6 +32,14 @@ A business objective is not evidence of value.
 
 Determine whether the operating data product satisfies the measurable quality, service and operational commitments made in its definition.
 
+### Operating intent
+
+Observability connects a measurement to the exact product, version, commitment and evaluation period to which it applies. A dashboard value without this context may be useful operational telemetry, but it is weak assurance evidence. The measurement method, sampling window, exclusions and status logic should be explicit enough for another reviewer to reproduce or challenge the result.
+
+Service assurance should combine technical observations with consumer impact. A short availability failure may be immaterial for one use case and decisive for another; a quality average may hide a critical segment. Evaluation should therefore preserve the declared threshold while allowing impact, severity and approved exceptions to be assessed separately.
+
+The measurement system also requires assurance. Missing telemetry, changed metric definitions, delayed observations and unmonitored interfaces should be visible rather than interpreted as successful performance.
+
 ### Practices
 
 1. Identify measurable commitments.
@@ -64,11 +72,26 @@ ODPS for declared quality and service objectives.
 - remediation record
 - exception where applicable
 
+### Assurance questions
+
+- Is every result tied to the product, contract version, metric and evaluation period in force?
+- Can a reviewer reproduce the status from the recorded observations and method?
+- Are missing, delayed or invalid measurements distinguished from passing results?
+- Does incident and impact evidence reach the owner who can change the product or commitment?
+
 ## C13. Governance, Risk, Compliance and Control Assurance
 
 ### Purpose
 
 Determine whether applicable governance obligations have been translated into controls and whether those controls operate effectively.
+
+### Operating intent
+
+Control assurance begins with applicability. The organisation should be able to explain why an obligation, policy and control applies to a product and which authority accepted that interpretation. Copying a standard control catalog into every product obscures accountability and makes evidence review unmanageable.
+
+A control definition should identify its objective, owner, trigger or frequency, scope, method, expected result, evidence and response to failure. Control execution then produces an observation about a particular product and version. Design approval, execution evidence and effectiveness assessment are different stages and should not be collapsed into one “compliant” status.
+
+Exceptions are governed decisions with scope, rationale, compensating measures, accountable acceptance and expiry. Findings should connect to remediation and retest evidence. Independent assurance may sample evidence or repeat tests, but independence and sampling limits must be disclosed.
 
 ### Core chain
 
@@ -106,11 +129,26 @@ Determine whether applicable governance obligations have been translated into co
 - remediation result
 - independent review where required
 
+### Assurance questions
+
+- Can each material control be traced to an applicable requirement and accountable interpretation?
+- Does the evidence show that the control executed, not merely that it was designed or configured?
+- Are exceptions time-bound, scoped, accepted and reviewed before expiry?
+- Can findings be followed through remediation, retest and closure?
+
 ## C14. Adoption, Outcomes and Value Realisation
 
 ### Purpose
 
 Determine whether consumers use the data product and whether that consumption contributes to the outcome that originally justified investment.
+
+### Operating intent
+
+Adoption is meaningful use by an intended consumer, not an account count or isolated access event. The organisation should define what meaningful use means for each use case and separate initial trial, recurring consumption, production dependency and reuse by an additional use case.
+
+Outcome measurement compares the present state with a baseline, target or credible counterfactual. It should record the period, population, calculation, assumptions and other changes that may explain the result. Attribution must be proportionate to the decision: a small operational improvement may use contribution evidence, while a major investment claim may need stronger causal analysis.
+
+Value combines the outcome with its significance, cost and attribution. Financial value may be appropriate, but risk reduction, compliance, public value, decision quality and service improvement should not be forced into artificial revenue estimates. A mandatory product can have value even when stopping it is not a realistic option; the portfolio decision may instead concern cost, quality or risk.
 
 ### Value chain
 
@@ -188,6 +226,13 @@ Was investing in this product preferable to alternative uses of resources?
 - attribution method
 - portfolio review decision
 
+### Assurance questions
+
+- Is meaningful adoption defined for the relevant consumer and use case?
+- Can usage be connected to a change in a decision, process, obligation or service outcome?
+- Are baseline, target, period, assumptions, cost and attribution method visible?
+- Would the investment decision change if the reported value were lower or more uncertain?
+
 ## Four assurance views
 
 ### Service Health
@@ -207,3 +252,15 @@ Are intended consumers using it?
 Are intended outcomes being achieved?
 
 These should not be collapsed into one opaque score.
+
+A combined executive view may summarize the four perspectives, but it should preserve drill-down to the underlying measures, evidence, exceptions and decision owners. A healthy service can still be unused, a compliant product can still lack value, and a valuable product can still require urgent control remediation.
+
+## Evidence basis and external references
+
+The framework requirements above remain Open Data Product Initiative decisions. These sources support the assurance model:
+
+- **`w3c-dqv`** — [W3C Data Quality Vocabulary](https://www.w3.org/TR/vocab-dqv/) separates quality dimensions, metrics, measurements, annotations and policy context. It informs machine-readable quality evidence without making RDF mandatory.
+- **`w3c-prov-o`** — [W3C PROV-O](https://www.w3.org/TR/prov-o/) supports attribution of evidence to entities, activities and agents. Provenance improves reviewability but does not by itself prove that a claim is true.
+- **`w3c-shacl`** — [W3C SHACL](https://www.w3.org/TR/shacl/) distinguishes constraints from validation reports and individual validation results. This supports the framework's declared-versus-observed separation.
+- **`nist-csf-2.0`**, **`nist-privacy-framework-1.0`** and **`nist-sp-800-53r5`** — [NIST Cybersecurity Framework 2.0](https://doi.org/10.6028/NIST.CSWP.29), [NIST Privacy Framework 1.0](https://www.nist.gov/privacy-framework/privacy-framework) and [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) provide risk, control and assessment patterns. They inform applicable control design and evidence; they do not establish universal legal obligations for every product.
+- **`oecd-ai-principles-2024`** — [OECD AI Principles](https://oecd.ai/en/ai-principles) emphasise beneficial outcomes, accountability, robustness and lifecycle risk management for AI. They are relevant when AI participates in the product environment, while C14 continues to measure organisational outcomes rather than AI activity counts.

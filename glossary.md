@@ -39,6 +39,14 @@ Examples include an ODPS file, ODPC catalog or approval record.
 
 Information demonstrating that an activity occurred, a requirement was satisfied or an outcome was observed.
 
+Evidence should be distinguishable from the declaration, target or policy against which it is evaluated.
+
+## Evidence Provenance
+
+Information explaining how evidence was produced, including the relevant source, activity or method, time, scope, version and responsible person or system.
+
+Provenance improves traceability and reviewability. It does not by itself prove that the evidence is accurate or that the supported claim is valid.
+
 ## Measure
 
 A quantitative or qualitative method for evaluating performance or outcomes.
@@ -75,6 +83,12 @@ A problem, task, decision or process requiring data.
 
 A person, organisation, application, system or AI agent consuming a product.
 
+The consumer identity should be specific enough to apply access conditions, understand context and evaluate adoption while respecting privacy and proportionality.
+
+## Accountable Owner
+
+The person or formally delegated role answerable for a decision, product outcome or capability. Tasks may be delegated, but accountability and escalation authority remain explicit.
+
 ## Product Decision
 
 An explicit portfolio decision concerning creation, investment, change, consolidation or retirement.
@@ -86,6 +100,12 @@ A reusable data capability offered to consumers.
 ## Product Contract
 
 The authoritative machine-readable definition of a data product.
+
+The contract is distinct from a catalog record, delivery interface and runtime configuration, even when those surfaces present or execute parts of it.
+
+## Authoritative Artifact
+
+The approved representation that has decision authority for a defined object, field or scope. Copies and generated views should resolve to or be reconciled with it.
 
 ## Vocabulary Concept
 
@@ -103,6 +123,8 @@ A repeatable operational contract.
 
 One occurrence of a workflow or operational process.
 
+An execution should identify the applicable workflow, inputs, actor or system, outputs, decisions, status and evidence where material.
+
 ## Outcome
 
 An observed change associated with a use case or objective.
@@ -110,6 +132,28 @@ An observed change associated with a use case or objective.
 ## Value
 
 The significance of an outcome to the organisation or its stakeholders.
+
+Value is evaluated in relation to cost, alternatives, assumptions and attribution. Usage alone is not evidence of value.
+
+## Adoption
+
+Meaningful use of a data product by an intended consumer for an approved or recognised use case. Discovery, access, trial, recurring consumption and production dependency are different stages and should not be treated as equivalent.
+
+## AI Agent
+
+An AI-enabled software actor that can interpret context, select or invoke tools, execute steps or take actions with some degree of autonomy. Within this framework, an agent remains subject to product contracts, policy boundaries, identity, authorization, workflow and evidence requirements.
+
+## Agent-First Operations
+
+An operating environment in which AI agents actively participate in discovery, product operations, workflows, assurance or decision support within explicit governance boundaries. It is an implementation stage and profile context, not a separate framework.
+
+## Machine-Readable
+
+Represented in a structured form that software can parse and process according to explicit rules. A digital document containing only prose is not automatically machine-readable for framework purposes.
+
+## Conformance
+
+A scoped conclusion that an artifact, practice or capability satisfies stated requirements. The object, version, profile, assessment method and evidence supporting the conclusion should be explicit.
 
 ## Declared State
 

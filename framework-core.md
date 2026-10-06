@@ -40,6 +40,10 @@ The framework does not require organisations to operate AI agents. It provides o
 
 The Core remains machine-readable and automation-friendly by design. The ODPS standards family provides the machine-readable standards foundation underneath the framework. The framework is an operating model, not another ODPS-family specification.
 
+The Core defines required operating concerns rather than one mandatory organisational design. A small organisation may combine several accountabilities in one role; a large organisation may distribute them across product, domain, platform, governance and assurance teams. What matters is that the decision rights, practices, artifacts, evidence and outcomes remain explicit and traceable.
+
+Examples and external references explain how a requirement can be implemented. They do not silently create additional Core requirements. Applicable law, regulation, contracts and organisational policy may impose stronger obligations in a particular environment; those obligations should be represented through the relevant profile, product context and control model.
+
 ## 2. The four questions
 
 ### DIRECT
@@ -497,6 +501,10 @@ The difference between declared and observed state is a first-class governance s
 
 ## 14. Evidence model
 
+Evidence is information retained so that a material claim, execution or decision can be examined. It should identify what it concerns, where it came from, when it was produced, which version and scope applied, how it was generated and who or what is accountable for it. The required strength and retention period depend on the consequence of the decision being supported.
+
+Evidence may be a structured event, measurement, validation report, signed approval, decision record, test result or other durable artifact. A screenshot or narrative may be sufficient for a low-risk review but weak for repeatable automated assurance. The framework therefore specifies evidence purpose and traceability while allowing implementation profiles and organisations to define proportionate formats and controls.
+
 ### Directive evidence
 
 Objectives, priorities, policies, funding decisions, portfolio decisions and approvals.
@@ -517,6 +525,19 @@ Quality observations, service observations, consumption, incidents, control exec
 
 Adoption, use-case performance, KPI changes, cost, benefit, risk reduction, public value and other demonstrated outcomes.
 
+Evidence quality should be evaluated through at least:
+
+- identity — the object, product, control, workflow or decision is unambiguous
+- provenance — the producing person, system or activity is known
+- time — production time and applicable evaluation period are known
+- version — the relevant contract, policy, workflow and implementation versions are known
+- method — the collection, calculation or decision method is inspectable
+- integrity — material alteration can be detected or governed
+- scope — inclusions, exclusions and applicability are stated
+- retention — evidence remains available for the decisions and obligations it supports
+
+More evidence is not automatically better evidence. Collection should be proportionate, privacy-aware and connected to a decision or assurance need.
+
 ## 15. Value model
 
 The framework distinguishes six value classes:
@@ -534,6 +555,10 @@ The framework distinguishes four attribution levels:
 2. Contribution
 3. Enablement
 4. Mandatory value
+
+Value claims should state the baseline or counterfactual, measurement period, cost boundary, assumptions and attribution method. Financial conversion is useful only when credible; operational, decision, risk, compliance and public value may require different units and decision criteria.
+
+The value model is designed for investment decisions rather than promotional reporting. Uncertainty, negative outcomes and costs should remain visible. A product may be necessary despite weak direct financial attribution, or widely used while contributing little to the outcome that justified it.
 
 ## 16. Four assurance views
 
@@ -674,7 +699,27 @@ The framework therefore aims toward:
 
 Human-readable web pages, PDF documents, catalog pages, dashboards and reports should derive from the same underlying structured artifacts where practical. Generated views support communication; they do not replace the authoritative artifacts or the normative Markdown sources of this framework repository.
 
-## 22. Positioning statement
+## 22. Evidence-informed design and external references
+
+The Core is an Open Data Product Initiative operating-model design. External sources inform its reasoning and provide implementation patterns, but they do not become framework requirements merely because they are cited. The governed [Framework Evidence Library](https://github.com/Open-Data-Product-Initiative/framework/tree/main/library) records authority, applicability, rights and intended use for each source.
+
+Important supporting sources include:
+
+- **`w3c-dcat-3`** — [W3C Data Catalog Vocabulary 3](https://www.w3.org/TR/vocab-dcat-3/) for interoperable catalog, dataset, service, distribution and relationship patterns
+- **`w3c-skos`** — [W3C SKOS](https://www.w3.org/TR/skos-reference/) for concept identity, labels, semantic relationships and vocabulary mappings
+- **`w3c-prov-o`** — [W3C PROV-O](https://www.w3.org/TR/prov-o/) for provenance across entities, activities and agents
+- **`w3c-dqv`** — [W3C Data Quality Vocabulary](https://www.w3.org/TR/vocab-dqv/) for quality dimensions, metrics, measurements and annotations
+- **`w3c-odrl-2.2`** — [W3C ODRL Information Model 2.2](https://www.w3.org/TR/odrl-model/) for expressing permissions, prohibitions, duties and constraints
+- **`w3c-shacl`** — [W3C SHACL](https://www.w3.org/TR/shacl/) for machine-readable constraints and validation results
+- **`wilkinson-fair-principles-2016`** — [FAIR Guiding Principles](https://doi.org/10.1038/sdata.2016.18) for persistent identity, rich metadata, provenance and machine actionability
+- **`nist-csf-2.0`**, **`nist-privacy-framework-1.0`** and **`nist-sp-800-53r5`** — [NIST Cybersecurity Framework 2.0](https://doi.org/10.6028/NIST.CSWP.29), [NIST Privacy Framework 1.0](https://www.nist.gov/privacy-framework/privacy-framework) and [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) for risk, control, lifecycle and assurance patterns
+- **`nist-ai-rmf-1.0`**, **`nist-ai-600-1-genai-profile`** and **`oecd-ai-principles-2024`** — [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1), its [Generative AI Profile](https://doi.org/10.6028/NIST.AI.600-1) and the [OECD AI Principles](https://oecd.ai/en/ai-principles) for AI-specific governance where AI systems or agents are in scope
+- **`eu-ai-act-2024-1689`** — [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) as a jurisdiction-specific legal source for applicable AI obligations, not as a universal Core requirement
+- **`iso-iec-42001-2023`** and **`edm-council-dcam`** — [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) and [EDM Council DCAM](https://edmcouncil.org/frameworks/dcam/) as licensed comparison points; their protected content is not reproduced by this framework
+
+Sources may disagree, address different objects or apply only in particular jurisdictions. Maintainers should cite the primary source, disclose applicability and preserve the framework's authority boundary when proposing changes.
+
+## 23. Positioning statement
 
 The Data Product Operating Framework is an open operating model for managing data products from business demand to measurable value.
 

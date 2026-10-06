@@ -6,6 +6,7 @@ The framework follows the versioning rules in [VERSIONING.md](VERSIONING.md).
 
 ## Unreleased
 
+- Enriched the Core, all fourteen capability references, assessment method, implementation playbook, glossary and profiles with practical interpretation, assurance questions and evidence-grounded external references.
 - Added a governed external evidence library with authority, rights, currency and capability metadata.
 - Added deterministic source ingestion, indexing, evidence-grounded enrichment proposal and citation-validation tooling.
 - Established that LLM output is proposal-only and cannot directly modify normative framework Markdown.

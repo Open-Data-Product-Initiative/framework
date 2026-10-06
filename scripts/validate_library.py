@@ -8,7 +8,7 @@ import sys
 from datetime import date
 from urllib.parse import urlparse
 
-from library_support import CATALOG_PATH, load_catalog, load_collections
+from library_support import CATALOG_PATH, ROOT, load_catalog, load_collections
 
 
 SOURCE_ID = re.compile(r"[a-z0-9]+(?:[.-][a-z0-9]+)*\Z")
@@ -23,6 +23,18 @@ SOURCE_TYPES = {
 }
 ACCESS_VALUES = {"local-analysis", "metadata-only"}
 REDISTRIBUTION_VALUES = {"not-cleared", "prohibited", "cc-by-4.0"}
+REFERENCE_PATTERN = re.compile(r"\*\*`(?P<id>[a-z0-9]+(?:[.-][a-z0-9]+)*)`\*\*")
+REFERENCE_FILES = (
+    "framework-core.md",
+    "assessment-standard.md",
+    "implementation-playbook.md",
+    "capabilities/direct.md",
+    "capabilities/define.md",
+    "capabilities/operate.md",
+    "capabilities/assure.md",
+    "profiles/enterprise-data-product-profile.md",
+    "profiles/ai-agent-first-data-product-profile.md",
+)
 
 
 def main() -> int:
@@ -127,6 +139,20 @@ def main() -> int:
             if collection_id not in source.get("collections", []):
                 errors.append(f"collection {collection_id}: {source_id} lacks reciprocal membership")
 
+    cited_ids: set[str] = set()
+    for relative_path in REFERENCE_FILES:
+        path = ROOT / relative_path
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"{relative_path}: cannot validate library references: {exc}")
+            continue
+        for match in REFERENCE_PATTERN.finditer(text):
+            source_id = match.group("id")
+            cited_ids.add(source_id)
+            if source_id not in ids:
+                errors.append(f"{relative_path}: unknown library source reference {source_id!r}")
+
     if errors:
         print("Library validation failed:")
         for error in errors:
@@ -135,7 +161,8 @@ def main() -> int:
 
     print(
         f"Library validation passed: {len(source_records)} sources in "
-        f"{len(collections)} collections ({CATALOG_PATH.relative_to(CATALOG_PATH.parents[1])})."
+        f"{len(collections)} collections and {len(cited_ids)} cited source IDs "
+        f"({CATALOG_PATH.relative_to(CATALOG_PATH.parents[1])})."
     )
     return 0
 

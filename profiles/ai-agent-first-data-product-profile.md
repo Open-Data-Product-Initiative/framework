@@ -54,6 +54,19 @@ The profile assumes that:
 
 Agent-first does not mean agent-only. Human review, escalation and decision rights remain part of the operating model where material judgement or authority is required.
 
+### Proportional strengthening
+
+The strength of implementation should reflect at least:
+
+- autonomy — whether the agent recommends, prepares, decides or acts
+- materiality — the consequence for people, services, finances, rights or obligations
+- reversibility — whether an action can be safely undone
+- reach — the number and variety of products, consumers and systems affected
+- uncertainty — the reliability of context, semantics, models and observations
+- exposure — the sensitivity of data and power of available tools
+
+Higher consequence, autonomy or irreversibility requires stronger identity, authorization, validation, monitoring, approval, suspension and evidence. Low-risk assistance may use lighter controls, but it should still remain traceable to an approved use case and accountable owner.
+
 ## 4. Strengthened Core capability requirements
 
 All fourteen Core capabilities apply. The profile adds the following context-specific expectations.
@@ -315,3 +328,11 @@ The profile does not award maturity merely because an organisation uses agents o
 - outcomes and value are measured beyond execution volume
 
 Stronger profile requirements increase the evidence expected within a capability. They do not create a separate capability score or maturity model.
+
+## 10. Evidence basis and applicability
+
+Library sources **`nist-ai-rmf-1.0`**, **`nist-ai-600-1-genai-profile`** and **`oecd-ai-principles-2024`** support this profile. The [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1) supports lifecycle governance, contextual risk analysis, measurement and accountable management. Its [Generative AI Profile](https://doi.org/10.6028/NIST.AI.600-1) adds generative-AI risk and action patterns relevant to some agent implementations. The [OECD AI Principles](https://oecd.ai/en/ai-principles) provide intergovernmental context for beneficial outcomes, transparency, robustness and accountability.
+
+Sources **`w3c-prov-o`**, **`w3c-odrl-2.2`** and **`w3c-shacl`** provide implementation patterns. [W3C PROV-O](https://www.w3.org/TR/prov-o/) informs execution and evidence provenance; [W3C ODRL 2.2](https://www.w3.org/TR/odrl-model/) informs machine-readable permissions and duties; and [W3C SHACL](https://www.w3.org/TR/shacl/) provides an example of machine-testable constraints and validation results. These are implementation resources, not replacements for ODPS-family authority.
+
+Library source **`eu-ai-act-2024-1689`**, [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), may impose legal requirements for particular AI systems, actors, uses and dates in its jurisdiction. This profile does not make those jurisdiction-specific obligations universal or provide a legal compliance determination. Organisations should map applicable duties to C6 and C13 with qualified legal and risk ownership.
