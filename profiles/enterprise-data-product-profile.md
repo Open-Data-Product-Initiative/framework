@@ -58,6 +58,8 @@ The profile does not require replacement of existing platforms. It requires clea
 
 Distributed implementation is acceptable when authority is explicit. For example, the product contract may be maintained in source control, discovery metadata in a catalog, entitlements in an identity platform and observations in monitoring systems. The organisation should define which system is authoritative for each object, how identifiers connect them and how conflicts or stale copies are detected.
 
+![An enterprise architecture landscape connecting portfolio, contract, catalog, identity, workflow, delivery, observability and governance systems through shared product identity and explicit authority.](../assets/enterprise-system-authority.svg "Figure 9. Enterprise adoption does not require one platform: existing systems can remain operational authorities when stable identifiers, ownership and evidence flows connect them.")
+
 ## 4. Core capability requirements
 
 All fourteen Core capabilities apply.

@@ -154,6 +154,8 @@ Value combines the outcome with its significance, cost and attribution. Financia
 
 `Product exists → Product is discoverable → Consumer receives access → Consumer uses product → Use case changes → Outcome changes → Value is realised`
 
+![An ascending path from product discovery and access through adoption and consumption to use-case outcome, organisational value and portfolio return.](../assets/discovery-to-value.svg "Figure 8. Discovery, access and consumption demonstrate activity; value is established only when evidence connects that activity to use-case and organisational outcomes.")
+
 ### Practices
 
 1. Define expected value before investment.

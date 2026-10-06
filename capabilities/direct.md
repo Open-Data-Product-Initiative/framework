@@ -143,6 +143,8 @@ Accountability should distinguish the person who owns the product outcome from p
 
 Decision records should state the options considered, evidence available, assumptions made and authority used. This allows later reviewers to distinguish a poor decision from a reasonable decision made with incomplete information.
 
+![Business objectives and registered use cases entering a reuse and evidence evaluation, followed by explicit create, invest, merge, change or retire portfolio decisions.](../assets/demand-investment-funnel.svg "Figure 5. Portfolio governance converts qualified demand into an explicit lifecycle decision and uses later evidence to revisit that decision.")
+
 ### Practices
 
 1. Maintain the product portfolio.

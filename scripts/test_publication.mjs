@@ -25,6 +25,7 @@ assert.match(index, /Draft publication/);
 assert.doesNotMatch(index, /\n---\n/);
 assert.doesNotMatch(index, /(?:href|src)="\//);
 assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must not link to Markdown source paths");
+assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "Expected nine framework illustrations");
 
 let lastChapterPosition = -1;
 for (const chapter of manifest.chapters) {
@@ -55,6 +56,15 @@ const requiredFiles = [
   "assets/framework.css",
   "assets/framework.js",
   "assets/framework-overview-v0.1.png",
+  "assets/traceability-chain.svg",
+  "assets/use-case-product-network.svg",
+  "assets/declare-execute-evidence.svg",
+  "assets/odps-authority-model.svg",
+  "assets/product-lifecycle-change.svg",
+  "assets/discovery-to-value.svg",
+  "assets/enterprise-system-authority.svg",
+  "assets/data-product-context.svg",
+  "assets/demand-investment-funnel.svg",
   "assets/fonts/poppins-400.woff2",
   "assets/fonts/poppins-800.woff2",
   "assets/fonts/OFL.txt",

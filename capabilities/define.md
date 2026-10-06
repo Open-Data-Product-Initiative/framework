@@ -20,6 +20,8 @@ DEFINE turns an approved data product candidate into an explicit, governed and m
 - ODPG defines relationships between products, use cases, objectives, policies and other objects.
 - ODPR defines repeatable work and workflow contracts around those artifacts.
 
+![A central data product contract connected to product identity, semantic vocabulary, commitments and conditions, relationships and interfaces.](../assets/data-product-context.svg "Figure 6. A product contract is the stable centre of a connected definition: identity and version bind semantics, conditions, relationships and interfaces together.")
+
 ## C4. Product Definition and Contract
 
 ### Purpose

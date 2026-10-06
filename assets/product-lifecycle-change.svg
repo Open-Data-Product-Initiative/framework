@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Data product lifecycle and change impact</title>
+  <desc id="desc">A circular lifecycle moves from proposal to retirement. A material change triggers impact analysis across consumers, dependencies and controls before release or rollback.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#bd5b0b"/></marker><filter id="s"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#1e0a2e" flood-opacity=".12"/></filter></defs>
+  <rect x="1" y="1" width="1198" height="678" rx="18" fill="#fbf9fc" stroke="#ddd4e2"/>
+  <g transform="translate(375 334)">
+    <circle r="222" fill="#fff7f0" stroke="#f0d9c6" stroke-width="24"/>
+    <path d="M0-222A222 222 0 0 1 157-157" fill="none" stroke="#166698" stroke-width="24"/>
+    <path d="M157-157A222 222 0 0 1 222 0" fill="none" stroke="#13745f" stroke-width="24"/>
+    <path d="M222 0A222 222 0 0 1 157 157" fill="none" stroke="#bd5b0b" stroke-width="24"/>
+    <path d="M157 157A222 222 0 0 1 0 222" fill="none" stroke="#d56f18" stroke-width="24"/>
+    <path d="M0 222A222 222 0 0 1-157 157" fill="none" stroke="#55409a" stroke-width="24"/>
+    <path d="M-157 157A222 222 0 0 1-222 0" fill="none" stroke="#6c2a8e" stroke-width="24"/>
+    <path d="M-222 0A222 222 0 0 1-157-157" fill="none" stroke="#6e6276" stroke-width="24"/>
+    <path d="M-157-157A222 222 0 0 1 0-222" fill="none" stroke="#3c3046" stroke-width="24"/>
+    <g fill="#fff" stroke="#1e0a2e" stroke-width="3"><circle cy="-222" r="15"/><circle cx="157" cy="-157" r="15"/><circle cx="222" r="15"/><circle cx="157" cy="157" r="15"/><circle cy="222" r="15"/><circle cx="-157" cy="157" r="15"/><circle cx="-222" r="15"/><circle cx="-157" cy="-157" r="15"/></g>
+    <g font-family="Arial,sans-serif" font-size="15" fill="#1e0a2e" font-weight="700" text-anchor="middle"><text y="-252">Proposed</text><text x="191" y="-174">Approved</text><text x="268" y="5">Defined</text><text x="198" y="188">Developed</text><text y="264">Tested</text><text x="-190" y="188">Released</text><text x="-270" y="5">Deprecated</text><text x="-190" y="-174">Retired</text></g>
+    <g filter="url(#s)"><circle r="111" fill="#fff" stroke="#bd5b0b" stroke-width="5"/><path d="M-38-42h49l27 27v66h-76zM11-42v27h27M-20 4h40M-20 21h31" fill="none" stroke="#bd5b0b" stroke-width="4"/><text y="82" text-anchor="middle" fill="#1e0a2e" font-family="Arial,sans-serif" font-size="18" font-weight="700">Product v2.3</text></g>
+  </g>
+  <path d="M565 455C625 485 650 500 700 500" fill="none" stroke="#bd5b0b" stroke-width="4" marker-end="url(#a)"/>
+  <g font-family="Arial,sans-serif">
+    <text x="762" y="90" fill="#bd5b0b" font-size="17" font-weight="700" letter-spacing="2">MATERIAL CHANGE PATH</text>
+    <g transform="translate(880 187)" filter="url(#s)"><path d="M-148-61h296l-15 122h-266z" fill="#fff" stroke="#bd5b0b" stroke-width="4"/><circle cx="-94" r="30" fill="#bd5b0b"/><path d="M-110 0h32M-94-16v32" stroke="#fff" stroke-width="4"/><text x="-48" y="-12" fill="#1e0a2e" font-size="19" font-weight="700">Classify change</text><text x="-48" y="13" fill="#6e6276" font-size="14">breaking · compatible · editorial</text></g>
+    <path d="M880 250v58" stroke="#bd5b0b" stroke-width="4" marker-end="url(#a)"/>
+    <g transform="translate(880 376)" filter="url(#s)"><circle r="68" fill="#fff" stroke="#bd5b0b" stroke-width="4"/><circle r="26" fill="none" stroke="#bd5b0b" stroke-width="7" stroke-dasharray="15 8"/><circle r="8" fill="#bd5b0b"/><text x="0" y="101" text-anchor="middle" fill="#1e0a2e" font-size="19" font-weight="700">Impact analysis</text></g>
+    <g transform="translate(705 376)"><circle r="50" fill="#eaf4fa" stroke="#166698" stroke-width="3"/><circle cy="-10" r="11" fill="#166698"/><path d="M-24 24c2-18 12-28 24-28s22 10 24 28" fill="none" stroke="#166698" stroke-width="4"/><text y="75" text-anchor="middle" fill="#3c3046" font-size="15" font-weight="700">Consumers</text></g>
+    <g transform="translate(1055 376)"><circle r="50" fill="#edf7f4" stroke="#13745f" stroke-width="3"/><path d="M-20-20 20 20M20-20-20 20" stroke="#13745f" stroke-width="5"/><circle cx="-20" cy="-20" r="8" fill="#13745f"/><circle cx="20" cy="20" r="8" fill="#13745f"/><circle cx="20" cy="-20" r="8" fill="#13745f"/><circle cx="-20" cy="20" r="8" fill="#13745f"/><text y="75" text-anchor="middle" fill="#3c3046" font-size="15" font-weight="700">Dependencies</text></g>
+    <g transform="translate(880 553)"><rect x="-155" y="-55" width="310" height="110" rx="12" fill="#f4eef7" stroke="#6c2a8e" stroke-width="4"/><path d="M-118 2l17 17 31-38" fill="none" stroke="#6c2a8e" stroke-width="5"/><text x="-51" y="-10" fill="#1e0a2e" font-size="18" font-weight="700">Gate the release</text><text x="-51" y="16" fill="#6e6276" font-size="14">release · migrate · roll back</text></g>
+    <path d="M880 452v39" stroke="#bd5b0b" stroke-width="4" marker-end="url(#a)"/>
+  </g>
+</svg>

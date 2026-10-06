@@ -78,6 +78,8 @@ Backward traceability:
 
 The same identifiers and relationships should make this chain traversable in both directions.
 
+![A bidirectional traceability chain connecting objective, use case, product decision, product, contract, delivery, consumption, evidence, outcome, value and investment decision.](assets/traceability-chain.svg "Figure 1. Intent and commitments flow toward delivery; evidence and value flow back toward accountable investment decisions.")
+
 ## 4. Core foundation principles
 
 ### F1. Start from demand
@@ -103,6 +105,8 @@ The relationship is many-to-many:
 `Objective → Use Case → Data Product`
 
 One use case can require many products, and one product can support many use cases.
+
+![Several use cases connected to several reusable data products in a many-to-many network.](assets/use-case-product-network.svg "Figure 2. Use cases preserve the reason for demand while reusable data products may serve several needs across the portfolio.")
 
 ### F3. Data products are contracts
 
@@ -150,6 +154,8 @@ Operational platforms execute work.
 Runtime systems produce evidence.
 
 `DECLARE → EXECUTE → EVIDENCE`
+
+![Three connected layers showing ODPS-family declarations, operational execution and retained evidence, with a comparison between declared and observed state.](assets/declare-execute-evidence.svg "Figure 3. Portable declarations guide operational systems; runtime observations become evidence that can be compared with the declared state.")
 
 ### F7. Treat evidence as a first-class object
 
@@ -454,6 +460,8 @@ Provides durable assurance information that proves what happened.
 It answers:
 
 - What proves it?
+
+![A radial authority model assigning product contracts, portfolio objects, vocabulary, relationships and workflows to distinct ODPS-family standards, connected to runtime systems and evidence.](assets/odps-authority-model.svg "Figure 4. Each ODPS-family standard has a distinct authority; operational systems execute work and the evidence layer proves what occurred.")
 
 ## 12. Local context and shared context
 

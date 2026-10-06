@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Many-to-many relationship between use cases and data products</title>
+  <desc id="desc">Objectives create use cases, which connect in a many-to-many network with reusable data products. A reuse gate prevents unnecessary product creation.</desc>
+  <defs><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1e0a2e" flood-opacity=".12"/></filter></defs>
+  <rect x="1" y="1" width="1198" height="658" rx="18" fill="#fbf9fc" stroke="#ddd4e2"/>
+  <rect x="56" y="58" width="226" height="544" rx="18" fill="#eaf4fa"/>
+  <rect x="326" y="58" width="352" height="544" rx="18" fill="#edf7f4"/>
+  <rect x="722" y="58" width="422" height="544" rx="18" fill="#fff3e9"/>
+  <g font-family="Arial,sans-serif"><text x="82" y="96" fill="#166698" font-size="16" font-weight="700" letter-spacing="2">WHY</text><text x="352" y="96" fill="#13745f" font-size="16" font-weight="700" letter-spacing="2">REGISTERED DEMAND</text><text x="748" y="96" fill="#bd5b0b" font-size="16" font-weight="700" letter-spacing="2">REUSABLE CAPABILITY</text></g>
+  <g fill="none" stroke-linecap="round" stroke-width="4" opacity=".78">
+    <path d="M245 210C320 210 327 185 398 185" stroke="#166698"/><path d="M245 210C320 230 327 330 398 330" stroke="#166698"/><path d="M245 442C320 430 327 475 398 475" stroke="#166698"/>
+    <path d="M600 185C700 185 720 175 824 175" stroke="#13745f"/><path d="M600 185C700 205 720 330 824 330" stroke="#13745f"/><path d="M600 330C700 320 720 175 824 175" stroke="#13745f"/><path d="M600 330C700 330 720 330 824 330" stroke="#13745f"/><path d="M600 475C700 455 720 330 824 330" stroke="#13745f"/><path d="M600 475C700 475 720 485 824 485" stroke="#13745f"/>
+  </g>
+  <g filter="url(#s)" font-family="Arial,sans-serif">
+    <g transform="translate(168 210)"><circle r="72" fill="#166698"/><circle r="39" fill="none" stroke="#fff" stroke-width="4"/><circle r="13" fill="#fff"/><path d="M0-39V-18M39 0H18" stroke="#fff" stroke-width="4"/><text x="0" y="105" text-anchor="middle" fill="#1e0a2e" font-size="18" font-weight="700">Objective A</text></g>
+    <g transform="translate(168 442)"><circle r="72" fill="#1f79ad"/><path d="M-28 18V-3L0-30 28-3v21M-14 18V2h28v16" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><text x="0" y="105" text-anchor="middle" fill="#1e0a2e" font-size="18" font-weight="700">Objective B</text></g>
+    <g transform="translate(500 185)"><path d="M0-62 65-25 65 25 0 62-65 25-65-25z" fill="#13745f"/><circle cx="-17" cy="-7" r="10" fill="#fff"/><circle cx="17" cy="-7" r="10" fill="#fff"/><path d="M-39 26c3-17 13-25 22-25S2 9 5 26M-5 26C-2 9 8 1 17 1s19 8 22 25" fill="none" stroke="#fff" stroke-width="4"/><text x="0" y="92" text-anchor="middle" fill="#1e0a2e" font-size="18" font-weight="700">Use case 1</text></g>
+    <g transform="translate(500 330)"><path d="M0-62 65-25 65 25 0 62-65 25-65-25z" fill="#17866e"/><path d="M-29 14h58M-20 14V-10h40v24M-9-10v-16H9v16" fill="none" stroke="#fff" stroke-width="4"/><text x="0" y="92" text-anchor="middle" fill="#1e0a2e" font-size="18" font-weight="700">Use case 2</text></g>
+    <g transform="translate(500 475)"><path d="M0-62 65-25 65 25 0 62-65 25-65-25z" fill="#13745f"/><path d="M-30 19-10-4 4 8 31-23" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M19-23h12v12" fill="none" stroke="#fff" stroke-width="5"/><text x="0" y="92" text-anchor="middle" fill="#1e0a2e" font-size="18" font-weight="700">Use case 3</text></g>
+    <g transform="translate(927 175)"><ellipse cy="-35" rx="91" ry="28" fill="#da741e"/><path d="M836 140v70c0 16 41 29 91 29s91-13 91-29v-70" fill="#bd5b0b"/><ellipse cy="35" rx="91" ry="28" fill="#cf6816"/><ellipse cy="-35" rx="91" ry="28" fill="#e68a3e"/><text x="0" y="8" text-anchor="middle" fill="#fff" font-size="19" font-weight="700">Product A</text></g>
+    <g transform="translate(927 330)"><ellipse cy="-35" rx="91" ry="28" fill="#da741e"/><path d="M836 295v70c0 16 41 29 91 29s91-13 91-29v-70" fill="#bd5b0b"/><ellipse cy="35" rx="91" ry="28" fill="#cf6816"/><ellipse cy="-35" rx="91" ry="28" fill="#e68a3e"/><text x="0" y="8" text-anchor="middle" fill="#fff" font-size="19" font-weight="700">Product B</text></g>
+    <g transform="translate(927 485)"><ellipse cy="-35" rx="91" ry="28" fill="#da741e"/><path d="M836 450v70c0 16 41 29 91 29s91-13 91-29v-70" fill="#bd5b0b"/><ellipse cy="35" rx="91" ry="28" fill="#cf6816"/><ellipse cy="-35" rx="91" ry="28" fill="#e68a3e"/><text x="0" y="8" text-anchor="middle" fill="#fff" font-size="19" font-weight="700">Product C</text></g>
+  </g>
+  <g font-family="Arial,sans-serif"><circle cx="700" cy="330" r="40" fill="#fff" stroke="#6c2a8e" stroke-width="4"/><path d="M682 330l12 12 25-29" fill="none" stroke="#6c2a8e" stroke-width="5" stroke-linecap="round"/><text x="700" y="388" text-anchor="middle" fill="#6c2a8e" font-size="14" font-weight="700">REUSE FIRST</text></g>
+</svg>

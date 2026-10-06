@@ -139,6 +139,8 @@ Impact analysis should use known consumers, dependencies, workflows, controls an
 
 Deprecation is a managed period, not a label applied shortly before shutdown. Consumers need a supported alternative or explicit exception path, migration expectations and an end date. Retirement should revoke access, close or transfer obligations, update discovery records and retain enough evidence to explain the decision later.
 
+![A circular product lifecycle from proposal through production and retirement, with a change-impact branch connecting consumers, dependencies and controls before release.](../assets/product-lifecycle-change.svg "Figure 7. Product change is a governed lifecycle path: material changes are classified, tested against their impact and either released, migrated or rolled back.")
+
 ### Practices
 
 1. Maintain lifecycle state.

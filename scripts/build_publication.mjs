@@ -94,6 +94,24 @@ function renderMarkdown(source, chapter) {
     tokens[index].attrSet("href", resolvePublicationLink(href, chapter));
     return defaultLinkOpen(tokens, index, options, env, self);
   };
+  const defaultImage = md.renderer.rules.image
+    ?? ((tokens, index, options, env, self) => self.renderToken(tokens, index, options));
+  md.renderer.rules.image = (tokens, index, options, env, self) => {
+    const sourcePath = tokens[index].attrGet("src");
+    if (sourcePath && !/^[a-z][a-z0-9+.-]*:/i.test(sourcePath) && !sourcePath.startsWith("#")) {
+      const resolvedSource = path.posix.normalize(
+        path.posix.join(path.posix.dirname(chapter.source), decodeURIComponent(sourcePath))
+      );
+      if (!resolvedSource.startsWith("assets/")) {
+        throw new Error(
+          `Illustration from ${chapter.source} must resolve inside assets/: ${sourcePath}`
+        );
+      }
+      tokens[index].attrSet("src", resolvedSource);
+    }
+    tokens[index].attrSet("decoding", "async");
+    return defaultImage(tokens, index, options, env, self);
+  };
   md.renderer.rules.heading_close = (tokens, index, options, env, self) => {
     const opening = [...tokens.slice(0, index)].reverse().find((token) => token.type === "heading_open");
     const id = opening?.meta?.id;
@@ -104,6 +122,10 @@ function renderMarkdown(source, chapter) {
   };
 
   let html = md.render(stripFirstHeading(stripFrontMatter(source)));
+  html = html.replace(
+    /<p><img src="([^"]+)" alt="([^"]*)" title="([^"]+)" decoding="async"><\/p>/g,
+    '<figure class="framework-illustration"><img src="$1" alt="$2" decoding="async"><figcaption>$3</figcaption></figure>'
+  );
   html = html.replaceAll("<table>", '<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table"><table>');
   html = html.replaceAll("</table>", "</table></div>");
   return { html, headings };
@@ -255,7 +277,7 @@ await fs.writeFile(path.join(distDirectory, "index.html"), indexHtml);
 await fs.writeFile(path.join(distDirectory, "print.html"), printHtml);
 await fs.copyFile(path.join(publicationDirectory, "assets", "framework.css"), path.join(distDirectory, "assets", "framework.css"));
 await fs.copyFile(path.join(publicationDirectory, "assets", "framework.js"), path.join(distDirectory, "assets", "framework.js"));
-await fs.copyFile(path.join(root, "assets", "framework-overview-v0.1.png"), path.join(distDirectory, "assets", "framework-overview-v0.1.png"));
+await fs.cp(path.join(root, "assets"), path.join(distDirectory, "assets"), { recursive: true });
 
 for (const file of await fs.readdir(path.join(publicationDirectory, "assets", "fonts"))) {
   await fs.copyFile(path.join(publicationDirectory, "assets", "fonts", file), path.join(distDirectory, "assets", "fonts", file));

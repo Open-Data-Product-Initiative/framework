@@ -60,6 +60,7 @@
   --sidebar-width: 304px;
   --mobile-header-height: 64px;
   --content-width: 880px;
+  --desktop-content-gutter: 40px;
   --radius: 6px;
   --font-heading: "Poppins", "Segoe UI", sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -367,10 +368,10 @@ button {
 
 .document,
 .site-footer-inner {
-  width: min(100%, calc(var(--content-width) + 112px));
-  margin: 0 auto;
-  padding-right: 56px;
-  padding-left: 56px;
+  width: min(100%, calc(var(--content-width) + 80px));
+  margin: 0;
+  padding-right: var(--desktop-content-gutter);
+  padding-left: var(--desktop-content-gutter);
 }
 
 .hero-inner {
@@ -379,9 +380,9 @@ button {
   grid-template-columns: minmax(330px, 0.82fr) minmax(470px, 1.18fr);
   gap: clamp(36px, 4vw, 68px);
   align-items: center;
-  margin: 0 auto;
-  padding-right: 56px;
-  padding-left: 56px;
+  margin: 0;
+  padding-right: var(--desktop-content-gutter);
+  padding-left: var(--desktop-content-gutter);
   padding-top: 66px;
   padding-bottom: 62px;
 }
@@ -662,6 +663,27 @@ button {
 
 .chapter-body blockquote > :last-child {
   margin-bottom: 0;
+}
+
+.framework-illustration {
+  margin: 32px 0 36px;
+}
+
+.framework-illustration img {
+  width: 100%;
+  border: 1px solid var(--odp-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.framework-illustration figcaption {
+  max-width: 760px;
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 3px solid var(--chapter-accent);
+  color: var(--odp-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 .chapter-body code {
@@ -1193,8 +1215,24 @@ h6:hover .heading-anchor,
 
   .chapter-body pre,
   .table-wrap,
-  .overview-figure {
+  .overview-figure,
+  .framework-illustration {
     break-inside: avoid-page;
+  }
+
+  .framework-illustration {
+    margin: 6mm 0 7mm;
+  }
+
+  .framework-illustration img {
+    border-radius: 1mm;
+  }
+
+  .framework-illustration figcaption {
+    margin-top: 2mm;
+    padding-left: 3mm;
+    border-left-width: 0.8mm;
+    font-size: 8pt;
   }
 
   .chapter-body pre {
