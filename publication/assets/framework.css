@@ -174,12 +174,19 @@ button {
 }
 
 .sidebar-title {
+  display: block;
   margin: 0;
   color: #fff;
   font-family: var(--font-heading);
   font-size: 1.28rem;
   font-weight: 700;
   line-height: 1.25;
+  text-decoration: none;
+}
+
+.sidebar-title:hover,
+.sidebar-title:focus-visible {
+  color: #eac8f7;
 }
 
 .sidebar-meta {
@@ -788,11 +795,18 @@ h6:hover .heading-anchor,
 
   .mobile-title {
     overflow: hidden;
+    color: #fff;
     font-family: var(--font-heading);
     font-size: 0.88rem;
     font-weight: 700;
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .mobile-title:hover,
+  .mobile-title:focus-visible {
+    color: #eac8f7;
   }
 
   .mobile-version {

@@ -152,7 +152,7 @@ const sidebar = `<aside class="sidebar" id="site-navigation" aria-label="Framewo
   <div class="sidebar-head">
     <div class="sidebar-brand">
       <a class="sidebar-home" href="${escapeHtml(manifest.homepageUrl)}">Open Data Product Initiative</a>
-      <p class="sidebar-title">${escapeHtml(manifest.shortTitle)}</p>
+      <a class="sidebar-title" href="#overview" data-nav-target="overview" aria-label="Back to the beginning">${escapeHtml(manifest.shortTitle)}</a>
       <div class="sidebar-meta"><span class="status-chip">${escapeHtml(manifest.status)}</span><span class="version-chip">v${escapeHtml(manifest.version)}</span></div>
     </div>
     <button class="sidebar-close" id="nav-close" type="button" aria-label="Close navigation">${closeIcon}</button>
@@ -163,7 +163,7 @@ const sidebar = `<aside class="sidebar" id="site-navigation" aria-label="Framewo
 
 const mobileHeader = `<header class="mobile-header">
   <button class="mobile-nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false">${menuIcon}</button>
-  <span class="mobile-title">${escapeHtml(manifest.shortTitle)}</span>
+  <a class="mobile-title" href="#overview" aria-label="Back to the beginning">${escapeHtml(manifest.shortTitle)}</a>
   <span class="mobile-version">v${escapeHtml(manifest.version)}</span>
 </header>`;
 

@@ -13,6 +13,8 @@ assert.match(index, /<html lang="en"/);
 assert.match(index, /id="nav-toggle"[^>]+aria-controls="site-navigation"[^>]+aria-expanded="false"/);
 assert.match(index, /id="site-navigation"/);
 assert.match(index, /id="nav-backdrop"/);
+assert.match(index, /<a class="sidebar-title" href="#overview" data-nav-target="overview" aria-label="Back to the beginning">/);
+assert.match(index, /<a class="mobile-title" href="#overview" aria-label="Back to the beginning">/);
 assert.match(index, /assets\/framework\.js/);
 assert.match(print, /class="print-cover"/);
 assert.match(index, new RegExp(`downloads/${manifest.pdfFilename.replaceAll(".", "\\.")}`));

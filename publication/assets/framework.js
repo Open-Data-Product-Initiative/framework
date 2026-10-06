@@ -68,7 +68,7 @@
     });
   });
 
-  document.querySelectorAll(".framework-nav a[href^='#']").forEach((link) => {
+  document.querySelectorAll(".sidebar a[href^='#']").forEach((link) => {
     link.addEventListener("click", () => {
       if (mobileQuery.matches) setNavigationState(false);
     });
