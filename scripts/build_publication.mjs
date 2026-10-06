@@ -292,6 +292,15 @@ const footer = `<footer class="site-footer"><div class="site-footer-inner">
   <div class="site-footer-links"><a href="${escapeHtml(manifest.homepageUrl)}">opendataproducts.org</a><a href="${escapeHtml(manifest.repositoryUrl)}">GitHub repository</a></div>
 </div></footer>`;
 
+const analytics = `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${escapeHtml(manifest.googleAnalyticsId)}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '${escapeHtml(manifest.googleAnalyticsId)}');
+  </script>`;
+
 function fillTemplate(replacements) {
   let output = template;
   for (const [key, value] of Object.entries(replacements)) output = output.replaceAll(`{{${key}}}`, value);
@@ -312,8 +321,8 @@ const common = {
   FOOTER: footer
 };
 
-const indexHtml = fillTemplate({ ...common, BODY_CLASS: "publication publication--web", HERO: hero, SCRIPT: '<script src="assets/framework.js" defer></script>' });
-const printHtml = fillTemplate({ ...common, BODY_CLASS: "publication publication--print", HERO: hero, SCRIPT: "" });
+const indexHtml = fillTemplate({ ...common, ANALYTICS: analytics, BODY_CLASS: "publication publication--web", HERO: hero, SCRIPT: '<script src="assets/framework.js" defer></script>' });
+const printHtml = fillTemplate({ ...common, ANALYTICS: "", BODY_CLASS: "publication publication--print", HERO: hero, SCRIPT: "" });
 
 await fs.rm(distDirectory, { recursive: true, force: true });
 await fs.mkdir(path.join(distDirectory, "assets", "fonts"), { recursive: true });

@@ -10,6 +10,9 @@ const index = await fs.readFile(path.join(dist, "index.html"), "utf8");
 const print = await fs.readFile(path.join(dist, "print.html"), "utf8");
 
 assert.match(index, /<html lang="en"/);
+assert.equal(manifest.googleAnalyticsId, "G-2BRS2DSVKQ");
+assert.equal((index.match(new RegExp(manifest.googleAnalyticsId, "g")) ?? []).length, 2, "Web publication must load and configure the shared GA4 property once");
+assert.doesNotMatch(print, /googletagmanager\.com|gtag\('config'/, "Print publication must not send analytics events");
 assert.match(index, /id="nav-toggle"[^>]+aria-controls="site-navigation"[^>]+aria-expanded="false"/);
 assert.match(index, /id="site-navigation"/);
 assert.match(index, /id="nav-backdrop"/);
