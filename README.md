@@ -9,9 +9,13 @@ date: 2026-10-06
 
 The Data Product Operating Framework defines how organisations direct, define, operate and assure data products from business demand to measurable value.
 
-It sits above the ODPS standards family and explains how the specifications work together as part of an organisational operating model.
+Its Core is a universal, vendor-neutral and technology-neutral operating model. Implementation profiles adapt the Core for different organisational stages and operating models.
 
-![Data Product Operating Framework overview](assets/framework-overview-v0.1.png)
+The framework does not require organisations to operate AI agents. It provides one common operating model that supports organisations from traditional enterprise data product management through AI-agent-first operations.
+
+It sits above the ODPS standards family and explains how the specifications work together as part of an organisational operating model. The framework itself is not another ODPS-family specification.
+
+![Data Product Operating Framework Core overview](assets/framework-overview-v0.1.png)
 
 ## Project scope
 
@@ -32,7 +36,13 @@ The framework is not:
 
 ## Core structure
 
-The framework contains four functions and fourteen capabilities:
+The conceptual architecture is:
+
+`Data Product Operating Framework Core → Enterprise Data Product Profile → AI-Agent-First Data Product Profile`
+
+This is one framework, not three. The profiles extend Core requirements without renaming capabilities, forking terminology or creating separate maturity models.
+
+The universal Core contains four functions and fourteen capabilities:
 
 1. **DIRECT** — Why should we do this, and who decides?
 2. **DEFINE** — What exactly are we committing to provide?
@@ -43,15 +53,39 @@ The core rule is:
 
 > Intent and directives flow toward execution. Evidence and value flow toward decision-making.
 
+The Core also defines common principles, terminology, traceability, evidence, assessment and conformance models. It supports human users, traditional applications, analytics systems, data platforms, automation, AI systems and AI agents without requiring any one consumer or implementation technology.
+
+## Profile progression
+
+The implementation progression is:
+
+`Enterprise Data Products → Machine-Readable Data Products → Agent-Ready Data Products → Agent-First Operations`
+
+### Enterprise Data Products
+
+Governed products exist with ownership, contracts, catalogs and lifecycle management.
+
+### Machine-Readable Data Products
+
+Core product definitions, semantics, relationships and policies are increasingly structured and machine-readable.
+
+### Agent-Ready Data Products
+
+Products contain enough explicit context, semantics, access information and governance information for safe machine interpretation.
+
+### Agent-First Operations
+
+AI agents actively participate in discovery, product operations, workflows, assurance and decision support within explicit governance boundaries.
+
 ## Repository structure
 
-- `framework-core.md` — stable framework definition
-- `capabilities/` — detailed capability references
-- `assessment-standard.md` — maturity model and assessment logic
-- `implementation-playbook.md` — implementation guidance
-- `glossary.md` — formal terminology
-- `profiles/` — context-specific framework profiles
-- `crosswalks/` — mappings to other frameworks and standards
+- [`framework-core.md`](framework-core.md) — universal framework definition
+- [`capabilities/`](capabilities/) — detailed capability references
+- [`assessment-standard.md`](assessment-standard.md) — common capability assessment model
+- [`implementation-playbook.md`](implementation-playbook.md) — implementation guidance
+- [`glossary.md`](glossary.md) — common terminology
+- [`profiles/`](profiles/) — Core implementation profiles
+- [`crosswalks/`](crosswalks/) — mappings to other frameworks and standards
 - `assets/` — framework diagrams and other publication assets
 - `publication/` — shared HTML and PDF templates, styles and publication manifest
 - `scripts/build_publication.mjs` — deterministic Markdown-to-HTML publication build
@@ -64,11 +98,16 @@ The core rule is:
 
 ## Start here
 
-1. Read the [Framework Core](framework-core.md).
-2. Use the detailed references for [DIRECT](capabilities/direct.md), [DEFINE](capabilities/define.md), [OPERATE](capabilities/operate.md) and [ASSURE](capabilities/assure.md).
-3. Apply the [Implementation Playbook](implementation-playbook.md).
-4. Evaluate capabilities with the [Assessment Standard](assessment-standard.md).
-5. Use the [Glossary](glossary.md) for the framework's formal terminology.
+- [Framework Core](framework-core.md)
+- [DIRECT Capability Reference](capabilities/direct.md)
+- [DEFINE Capability Reference](capabilities/define.md)
+- [OPERATE Capability Reference](capabilities/operate.md)
+- [ASSURE Capability Reference](capabilities/assure.md)
+- [Assessment Standard](assessment-standard.md)
+- [Implementation Playbook](implementation-playbook.md)
+- [Enterprise Data Product Profile](profiles/enterprise-data-product-profile.md)
+- [AI-Agent-First Data Product Profile](profiles/ai-agent-first-data-product-profile.md)
+- [Glossary](glossary.md)
 
 ## ODPS standards family
 
@@ -80,15 +119,19 @@ The framework uses the ODPS standards family as its machine-readable foundation:
 - **ODPG** — relationships and context
 - **ODPR** — workflow contracts
 
-The framework itself is not another ODPS-family specification. It defines how the standards are used together in an operating model.
+Operational systems execute work and provide runtime observations. The evidence layer preserves what proves what happened.
+
+ODPS is machine-readable by design. Human-readable documentation and interfaces should increasingly be generated from the same underlying product artifacts used by software and AI agents.
+
+The framework defines how these standards and runtime responsibilities work together in an operating model. It does not redefine the standards.
 
 ## Publication model
 
-Markdown is the source of truth.
+Markdown is the normative, human-maintained source of truth for this framework repository.
 
 The responsive standalone HTML publication and the PDF are generated from the same ordered Markdown sources in `publication/manifest.json`. The HTML uses a dark, collapsible chapter navigation and a light reading area; below desktop width, navigation becomes an accessible hamburger-controlled drawer.
 
-Generated publication files should not be manually edited.
+Generated publication files should not be manually edited and are not independent normative sources.
 
 Install dependencies and run the complete publication pipeline:
 
@@ -123,4 +166,4 @@ When sharing or adapting the material, credit the **Data Product Operating Frame
 
 ## Status
 
-This repository currently contains the draft Core v0.1 and initial capability definitions. Draft material is open for review but must not be represented as a released or adopted framework version.
+This repository currently contains the draft Core v0.1, fourteen capability definitions and two draft implementation profiles. Draft material is open for review but must not be represented as a released or adopted framework version.

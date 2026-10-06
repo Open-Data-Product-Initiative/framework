@@ -9,7 +9,7 @@ date: 2026-10-06
 
 ## 1. Purpose
 
-The Data Product Operating Framework defines how organisations direct, define, operate and assure data products from business demand to measurable value.
+The Data Product Operating Framework Core is a universal, vendor-neutral and technology-neutral operating model for managing data products from business demand to measurable value.
 
 It provides a common operating structure connecting:
 
@@ -26,9 +26,19 @@ It provides a common operating structure connecting:
 - business outcomes
 - value
 
-The framework is vendor-neutral.
+The Core works for organisations operating with:
 
-The ODPS standards family provides the machine-readable standards foundation for significant parts of the framework.
+- human users
+- traditional applications
+- analytics systems
+- data platforms
+- automation
+- AI systems
+- AI agents
+
+The framework does not require organisations to operate AI agents. It provides one common operating model that supports organisations from traditional enterprise data product management through AI-agent-first operations.
+
+The Core remains machine-readable and automation-friendly by design. The ODPS standards family provides the machine-readable standards foundation underneath the framework. The framework is an operating model, not another ODPS-family specification.
 
 ## 2. The four questions
 
@@ -56,91 +66,196 @@ Evidence and value flow toward decision-making.
 
 Forward traceability:
 
-`Objective → Use Case → Investment Decision → Data Product → Product Contract → Delivery → Consumption → Outcome`
+`Objective → Use Case → Product Decision → Data Product → Product Contract → Delivery → Consumption → Evidence → Outcome → Value → Investment Decision`
 
 Backward traceability:
 
-`Outcome → Evidence → Data Product → Use Case → Investment Decision → Objective`
+`Investment Decision → Value → Outcome → Evidence → Consumption → Delivery → Product Contract → Data Product → Product Decision → Use Case → Objective`
 
-## 4. Core principles
+The same identifiers and relationships should make this chain traversable in both directions.
 
-### P1. Start from demand
+## 4. Core foundation principles
 
-The existence of data is not sufficient justification for creating a data product.
+### F1. Start from demand
 
-Data product investment should originate from an identifiable objective, problem, use case, obligation or consumer need.
+The existence of data does not justify creating a data product.
 
-### P2. Separate the use case from the product
+Investment starts from:
+
+- an objective
+- a problem
+- a use case
+- an obligation
+- a consumer need
+
+### F2. Separate use cases from data products
 
 A use case explains why data is needed.
 
 A data product defines a reusable capability provided to consumers.
 
-One use case can require many products.
+The relationship is many-to-many:
 
-One product can support many use cases.
+`Objective → Use Case → Data Product`
 
-### P3. Define products as contracts
+One use case can require many products, and one product can support many use cases.
 
-A managed data product should have an authoritative machine-readable definition describing what is provided, by whom, under which conditions and with which commitments.
+### F3. Data products are contracts
 
-### P4. Preserve business context
+A managed data product must have an authoritative definition.
+
+The contract describes:
+
+- what the product is
+- who provides it
+- what it provides
+- how it is accessed
+- what it means
+- what it promises
+- what conditions apply
+- how it changes
+
+### F4. Machine-readable by default, human-readable by presentation
+
+The authoritative representation should favour machine-readable structures.
+
+Human-readable views such as web pages, PDF documents, catalog pages, dashboards and reports should derive from the underlying structured artifacts where practical.
+
+ODPS is machine-readable by design. Human-readable documentation and interfaces should increasingly be generated from the same underlying product artifacts used by software and AI agents.
+
+### F5. Preserve business context
 
 Business context should survive the transition from strategy into technical implementation.
 
-A consumer, engineer or AI agent should be able to understand why a product exists without reconstructing its history manually.
+A product should remain connected to:
 
-### P5. Separate declaration from execution
+- objectives
+- use cases
+- consumers
+- KPIs
+- owners
+- dependencies
+- policies
 
-Specifications describe what should exist or happen.
+### F6. Separate declaration from execution
 
-Platforms and runtime systems execute work.
+The ODPS standards family declares portable contracts and context.
 
-Runtime evidence records what happened.
+Operational platforms execute work.
 
-A runtime implementation should not silently redefine the declared product contract.
+Runtime systems produce evidence.
 
-### P6. Treat evidence as a first-class object
+`DECLARE → EXECUTE → EVIDENCE`
 
-Governance, quality, service, adoption and value claims should be supported by evidence.
+### F7. Treat evidence as a first-class object
 
-Where appropriate, that evidence should be machine-readable.
+Claims must be backed by evidence.
 
-### P7. Measure value beyond usage
+- A quality target is not evidence of quality.
+- An SLA is not evidence of service performance.
+- A policy reference is not evidence that a control worked.
+- A use case is not evidence of adoption.
+- An objective is not evidence of value.
 
-Discovery, access and usage are important signals.
+### F8. Separate declared state from observed state
 
-They do not by themselves prove value.
+Declared state describes what should happen.
 
-Value requires evidence that product consumption contributed to an intended outcome.
+Observed state describes what runtime evidence shows happened.
 
-### P8. Govern the lifecycle
+The difference between the two is a governance signal.
 
-Products should be deliberately created, changed, versioned, reviewed, deprecated and retired.
+### F9. Measure value beyond usage
 
-A product should not become permanent simply because it once received funding.
+Usage is evidence of activity. It is not automatically evidence of value.
 
-### P9. Design for interoperability
+The framework preserves the chain:
 
-The framework should work across catalogs, data platforms, cloud environments, governance tools and organisational structures.
+`Discovery → Access → Adoption → Consumption → Use-case outcome → Organisational value`
 
-No specific platform should become a prerequisite for conformance.
+### F10. Govern the full lifecycle
 
-### P10. Design for people and machines
+Products should be deliberately:
 
-Product contracts, context, relationships, workflows and evidence should be usable by humans, software and AI agents where appropriate.
+- proposed
+- approved
+- defined
+- developed
+- tested
+- released
+- changed
+- deprecated
+- retired
+
+### F11. Design for interoperability
+
+The framework must work across:
+
+- catalogs
+- data platforms
+- cloud environments
+- governance tools
+- workflow engines
+- AI systems
+- organisational structures
+
+No single implementation platform is required.
+
+### F12. Design for both people and machines
+
+The same underlying product context should serve:
+
+- human consumers
+- applications
+- developer tools
+- governance systems
+- AI agents
+
+Different interfaces can present the information differently. The underlying meaning should remain consistent.
+
+### F13. Automation does not equal maturity
+
+A poor process does not become mature because it is automated.
+
+Maturity continues to be assessed through:
+
+- Accountability
+- Practice
+- Evidence
+- Outcome
+
+### F14. One traceability chain
+
+The framework preserves end-to-end traceability:
+
+`Objective → Use Case → Product Decision → Data Product → Product Contract → Delivery → Consumption → Evidence → Outcome → Value → Investment Decision`
+
+The chain works in both directions.
+
+### F15. One Core, multiple profiles
+
+The Core defines universal capabilities.
+
+Profiles strengthen or specialise those capabilities for specific operating environments. Profiles must not redefine the Core.
 
 ## 5. Framework structure
 
-The framework contains:
+The universal Core contains:
 
 - 4 functions
 - 14 capabilities
+- common principles
+- common terminology
+- a common traceability model
+- a common evidence model
+- a common assessment model
+- a common conformance model
 - practices within each capability
 - artifacts produced by those practices
 - evidence demonstrating execution and outcomes
 - measures evaluating performance
-- profiles adapting the framework to specific contexts
+
+Profiles adapt this shared foundation to specific operating environments. They are not separate frameworks.
 
 ## 6. Function 1: DIRECT
 
@@ -178,7 +293,7 @@ Establish the authoritative machine-readable definition of the data product.
 
 ### C5. Semantics and Vocabulary
 
-Establish shared and machine-readable meaning for important concepts and terminology.
+Establish shared meaning for important concepts and terminology, using machine-readable representations where practical.
 
 ### C6. Product Commitments and Usage Conditions
 
@@ -206,7 +321,7 @@ Purpose: make defined products discoverable, accessible, consumable and manageab
 
 ### C8. Catalog, Publication and Discovery
 
-Publish and organise governed products and business context so people, applications and AI agents can find suitable products.
+Publish and organise governed products and business context so people, applications and automated systems can find suitable products.
 
 ### C9. Provisioning, Integration and Consumption
 
@@ -218,7 +333,7 @@ Control how products move through lifecycle states and how versions and changes 
 
 ### C11. Workflow, Automation and Agent Operations
 
-Define repeatable and reviewable operating procedures for people, software systems and AI agents.
+Define repeatable and reviewable operating procedures for people, software systems, automation and AI agents where used.
 
 OPERATE produces:
 
@@ -276,9 +391,11 @@ Product management, domain expertise, data literacy, governance competence, engi
 
 ## 11. Authority model
 
+The Core uses the following separation of authority. These responsibilities are complementary and must not be collapsed into a new framework specification.
+
 ### ODPS
 
-Authoritative representation of an individual data product contract.
+Authoritative machine-readable representation of an individual data product contract.
 
 It answers:
 
@@ -296,7 +413,7 @@ It answers:
 
 ### ODPV
 
-Authoritative shared vocabulary for the standards family.
+Authoritative shared vocabulary and semantics for the standards family.
 
 It answers:
 
@@ -304,7 +421,7 @@ It answers:
 
 ### ODPG
 
-Authoritative portable representation of relationships.
+Authoritative portable representation of relationships and context.
 
 It answers:
 
@@ -312,7 +429,7 @@ It answers:
 
 ### ODPR
 
-Authoritative portable representation of repeatable workflow contracts.
+Authoritative portable representation of reusable workflow contracts.
 
 It answers:
 
@@ -320,7 +437,7 @@ It answers:
 
 ### Operational systems
 
-Authoritative sources for relevant runtime observations.
+Responsible for runtime execution and relevant runtime observations.
 
 They answer:
 
@@ -328,7 +445,7 @@ They answer:
 
 ### Evidence layer
 
-Provides durable assurance information.
+Provides durable assurance information that proves what happened.
 
 It answers:
 
@@ -460,16 +577,32 @@ Assessment considers four dimensions:
 
 The Core remains context-neutral.
 
-Initial candidate profiles:
+The profile architecture is:
 
-- Enterprise Data Product Profile
-- AI-Agent-Ready Data Product Profile
-- Public Sector Data Product Profile
-- Open Data Product Profile
-- Commercial Data Product Profile
-- Regulated Data Product Profile
+`Data Product Operating Framework Core → Enterprise Data Product Profile → AI-Agent-First Data Product Profile`
 
-Profiles add requirements. They do not redefine the Core.
+The [Enterprise Data Product Profile](profiles/enterprise-data-product-profile.md) provides the baseline implementation profile for organisations managing data products through conventional enterprise systems and human-led operating models.
+
+The [AI-Agent-First Data Product Profile](profiles/ai-agent-first-data-product-profile.md) extends the Core with stronger requirements for environments where AI agents directly discover, interpret, access, combine or act on data products.
+
+Profiles may:
+
+- extend Core requirements
+- identify stronger practices
+- identify required evidence
+- identify mandatory machine-readable artifacts
+- identify stronger control requirements
+- define context-specific assessment expectations
+
+Profiles must not:
+
+- duplicate the entire framework
+- rename Core capabilities
+- create separate maturity models
+- fork Core terminology
+- redefine ODPS-family standards
+
+Each profile uses the common C1-C14 capability model and the common assessment dimensions of Accountability, Practice, Evidence and Outcome.
 
 ## 19. Framework conformance
 
@@ -523,7 +656,9 @@ For any operational data product, the organisation should be able to answer:
 
 ## 21. Machine-readable framework objective
 
-The long-term objective is that a significant portion of the core traceability test can be answered from machine-readable artifacts and evidence.
+Machine-readable by default, human-readable by presentation is a major Core principle.
+
+The objective is that a significant portion of the Core traceability test can be answered from machine-readable artifacts and evidence.
 
 The framework therefore aims toward:
 
@@ -537,12 +672,16 @@ The framework therefore aims toward:
 - machine-readable assurance results
 - traceable value
 
+Human-readable web pages, PDF documents, catalog pages, dashboards and reports should derive from the same underlying structured artifacts where practical. Generated views support communication; they do not replace the authoritative artifacts or the normative Markdown sources of this framework repository.
+
 ## 22. Positioning statement
 
 The Data Product Operating Framework is an open operating model for managing data products from business demand to measurable value.
 
 It connects strategy, use cases, investment, product contracts, semantics, governance, delivery, lifecycle management and assurance through shared machine-readable context and evidence.
 
-The ODPS standards family provides the interoperable contract layer.
+The framework does not require organisations to operate AI agents. It provides one common operating model that supports organisations from traditional enterprise data product management through AI-agent-first operations.
 
-The framework explains how the parts work together.
+The ODPS standards family provides the interoperable, machine-readable standards foundation underneath the framework.
+
+The framework explains how the parts work together. It is not itself another ODPS-family specification.

@@ -57,7 +57,7 @@ ODPS.
 
 ### Purpose
 
-Ensure that people, systems and AI agents interpret product concepts consistently.
+Ensure that people and systems, including AI agents where used, interpret product concepts consistently.
 
 ### Core rule
 
@@ -105,7 +105,7 @@ Define what consumers should expect from the product and the conditions under wh
 5. Define legal terms.
 6. Define privacy and security expectations.
 7. Define commercial terms.
-8. Reuse standard profiles.
+8. Reuse standard condition patterns.
 9. Make commitments testable.
 10. Manage exceptions.
 
@@ -130,7 +130,7 @@ ODPS.
 
 ### Purpose
 
-Connect the individual data product to the wider network of objectives, use cases, KPIs, policies, systems, products, APIs, workflows, agents and organisational responsibilities.
+Connect the individual data product to the wider network of objectives, use cases, KPIs, policies, systems, products, APIs, workflows, consumers and organisational responsibilities.
 
 ### Core rule
 
@@ -151,7 +151,7 @@ A relationship graph answers:
 5. Connect dependencies.
 6. Connect governance context.
 7. Connect technical context.
-8. Connect AI consumption.
+8. Connect consumer and automation context where relevant.
 9. Record relationship confidence.
 10. Review graph integrity.
 

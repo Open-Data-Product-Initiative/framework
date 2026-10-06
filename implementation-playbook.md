@@ -113,17 +113,15 @@ Examples:
 
 Keep human approval where judgement, risk acceptance or investment authority requires it.
 
-## 6. AI-agent guidance
+## 6. Select an implementation profile
 
-For agent-assisted work:
+Use the [Enterprise Data Product Profile](profiles/enterprise-data-product-profile.md) as the baseline for conventional enterprise systems and human-led operating models.
 
-- provide explicit context
-- identify authoritative artifacts
-- bound accessible evidence
-- record model and workflow provenance where relevant
-- define stopping conditions
-- require human review for material decisions when required
-- retain outputs as evidence when they affect persistent artifacts
+Use the [AI-Agent-First Data Product Profile](profiles/ai-agent-first-data-product-profile.md) when AI agents directly discover, interpret, access, combine or act on data products.
+
+The AI-Agent-First Profile extends the Core with stronger machine-readable context, workflow, control, provenance and assurance requirements. It does not create a separate framework.
+
+An organisation can establish the Enterprise profile first and strengthen selected capabilities as it progresses toward agent-ready and agent-first operations.
 
 ## 7. Publication guidance
 

@@ -53,7 +53,11 @@ A recorded result identifying a deviation, weakness, failure or other matter req
 
 ## Profile
 
-A contextual application of the Core containing additional requirements or priorities for a particular environment.
+An implementation adaptation of the Core that strengthens practices, evidence, machine-readable artifacts, controls or assessment expectations for a particular operating environment without redefining Core capabilities.
+
+## Core
+
+The universal functions, capabilities, principles, terminology, traceability, evidence, assessment and conformance models shared by every framework implementation profile.
 
 ## Crosswalk
 

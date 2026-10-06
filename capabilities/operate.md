@@ -28,7 +28,7 @@ Runtime systems produce evidence.
 
 ### Purpose
 
-Make governed data products and surrounding business context discoverable by people, applications and AI agents.
+Make governed data products and surrounding business context discoverable by people, applications and automated systems, including AI agents where used.
 
 ### Practices
 
@@ -73,7 +73,7 @@ Turn a defined product interface into controlled consumer access.
 7. Associate consumption with the product.
 8. Manage consumer changes.
 9. Revoke access.
-10. Support agent consumption.
+10. Support automated consumers where used.
 
 ### Primary standard
 
@@ -154,7 +154,7 @@ Make repeatable data product work explicit, portable, bounded and reviewable.
 5. Declare outputs.
 6. Define gates.
 7. Define human review.
-8. Bound agent work.
+8. Bound automated and agent work where used.
 9. Separate contract from runtime.
 10. Record execution evidence.
 11. Manage workflow versions.
@@ -168,7 +168,7 @@ ODPR.
 
 - delivery flows
 - product handoff flows
-- agent discovery flows
+- machine discovery flows
 - trigger-based flows
 
 ### Evidence

@@ -84,9 +84,9 @@ For each capability:
 7. Determine the capability level.
 8. Record findings and improvement actions.
 
-## 6. Capability profile
+## 6. Capability assessment result
 
-Organisations should receive a capability profile rather than one opaque maturity score.
+Organisations should receive capability-level assessment results rather than one opaque maturity score.
 
 Example:
 
@@ -108,6 +108,10 @@ Example:
 | C14 Adoption, Outcomes and Value Realisation | 1 |
 
 ## 7. Conformance types
+
+Profiles use the same capability levels and assessment dimensions as the Core.
+
+Profile requirements add context-specific expectations for practices, artifacts, evidence and controls within the applicable Core capability. A profile must not rename capabilities, create a separate maturity model or treat automation as evidence of maturity.
 
 ### Artifact conformance
 

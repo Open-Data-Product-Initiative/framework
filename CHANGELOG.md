@@ -6,6 +6,10 @@ The framework follows the versioning rules in [VERSIONING.md](VERSIONING.md).
 
 ## Unreleased
 
+- Clarified one universal Core with Enterprise and AI-Agent-First implementation profiles.
+- Added the Enterprise Data Product Profile and AI-Agent-First Data Product Profile at version 0.1.0 draft.
+- Expanded the Core to fifteen foundation principles, including machine-readable-by-default design, declared-versus-observed state, and one bidirectional traceability chain.
+- Added automated checks for canonical capability names and profile architecture boundaries.
 - Prepared the initial draft repository structure.
 - Added the Core v0.1 framework, fourteen capability definitions, assessment standard, implementation playbook and glossary.
 - Added governance, contribution and automated repository-validation foundations.

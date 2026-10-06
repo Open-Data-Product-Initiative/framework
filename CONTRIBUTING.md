@@ -25,7 +25,7 @@ A contribution must:
 - include migration guidance when compatibility is affected
 - avoid unsupported maturity, conformance, adoption or value claims
 
-Profiles may add contextual requirements but must not silently redefine the Core.
+Profiles may add contextual requirements but must not silently redefine the Core. A profile must not rename Core capabilities, fork Core terminology, create a separate maturity model or redefine an ODPS-family standard.
 
 ## Validation
 

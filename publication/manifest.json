@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "status": "Draft",
   "date": "2026-10-06",
-  "description": "An open operating model for directing, defining, operating and assuring data products from business demand to measurable value.",
+  "description": "One universal operating model for directing, defining, operating and assuring data products, with enterprise and AI-agent-first implementation profiles.",
   "license": "CC BY 4.0",
   "siteUrl": "https://opendataproducts.org/framework/",
   "repositoryUrl": "https://github.com/Open-Data-Product-Initiative/framework",
@@ -82,6 +82,22 @@
       "eyebrow": "Context",
       "tone": "reference",
       "source": "profiles/README.md"
+    },
+    {
+      "id": "enterprise-profile",
+      "title": "Enterprise Data Product Profile",
+      "navLabel": "Enterprise Profile",
+      "eyebrow": "Implementation Profile",
+      "tone": "reference",
+      "source": "profiles/enterprise-data-product-profile.md"
+    },
+    {
+      "id": "ai-agent-first-profile",
+      "title": "AI-Agent-First Data Product Profile",
+      "navLabel": "AI-Agent-First Profile",
+      "eyebrow": "Implementation Profile",
+      "tone": "reference",
+      "source": "profiles/ai-agent-first-data-product-profile.md"
     },
     {
       "id": "crosswalks",

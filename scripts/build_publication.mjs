@@ -152,8 +152,8 @@ const hero = `<header class="web-hero" id="overview" data-scroll-section>
       <a class="button button--secondary" href="${escapeHtml(manifest.repositoryUrl)}">View source on GitHub</a>
     </div>
     <figure class="overview-figure">
-      <img src="assets/framework-overview-v0.1.png" alt="The framework connects DIRECT, DEFINE, OPERATE and ASSURE through fourteen capabilities and a continuous feedback loop.">
-      <figcaption>The Data Product Operating Framework at a glance.</figcaption>
+      <img src="assets/framework-overview-v0.1.png" alt="The Core connects DIRECT, DEFINE, OPERATE and ASSURE through fourteen capabilities and a continuous feedback loop.">
+      <figcaption>The Data Product Operating Framework Core at a glance.</figcaption>
     </figure>
   </div>
 </header>`;
