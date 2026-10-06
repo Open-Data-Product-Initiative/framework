@@ -629,6 +629,257 @@ button {
   font-weight: 700;
 }
 
+.chapter-body .capability-heading {
+  margin-top: 68px;
+  border-top: 1px solid var(--odp-border);
+  border-right: 1px solid var(--odp-border);
+  border-bottom: 1px solid var(--odp-border);
+  border-left: 7px solid var(--chapter-accent);
+  border-radius: var(--radius);
+  background: var(--odp-soft);
+  padding: 18px 20px 17px;
+  color: var(--odp-ink);
+  font-size: 1.4rem;
+}
+
+.chapter-body .principle-heading {
+  margin-top: 44px;
+  border-left: 5px solid var(--chapter-accent);
+  padding: 4px 0 4px 16px;
+  color: var(--odp-ink);
+}
+
+.chapter-body .progression-heading,
+.chapter-body .maturity-heading {
+  margin-top: 36px;
+  border-top: 1px solid var(--odp-border);
+  padding-top: 16px;
+  color: var(--odp-ink);
+}
+
+.chapter-body .semantic-heading {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.chapter-body .semantic-heading--purpose + p {
+  max-width: 780px;
+  border-left: 4px solid var(--chapter-accent);
+  background: var(--odp-soft);
+  padding: 14px 18px;
+  color: var(--odp-ink);
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.chapter-body .semantic-heading--intent {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.chapter-body .semantic-heading--intent::after {
+  height: 1px;
+  flex: 1 1 auto;
+  background: var(--odp-border);
+  content: "";
+}
+
+.chapter-body .semantic-heading--intent + p::first-letter {
+  color: var(--chapter-accent);
+  font-family: var(--font-heading);
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.structured-list {
+  margin-top: 0;
+}
+
+.chapter-body .structured-list > li {
+  margin-top: 0;
+}
+
+.chapter-body ol.structured-list--practices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  margin-bottom: 28px;
+  border-top: 1px solid var(--odp-border);
+  border-bottom: 1px solid var(--odp-border);
+  padding: 9px 0;
+  counter-reset: practice-step;
+  list-style: none;
+}
+
+.chapter-body ol.structured-list--practices > li {
+  position: relative;
+  min-height: 52px;
+  border-bottom: 1px solid #ebe5ee;
+  padding: 13px 10px 12px 46px;
+  counter-increment: practice-step;
+}
+
+.chapter-body ol.structured-list--practices > li::before {
+  position: absolute;
+  top: 11px;
+  left: 4px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 2px solid var(--chapter-accent);
+  border-radius: 50%;
+  color: var(--chapter-accent);
+  content: counter(practice-step);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.chapter-body ul.structured-list--evidence,
+.chapter-body ul.structured-list--outcomes,
+.chapter-body ul.structured-list--audience,
+.chapter-body ul.structured-list--assumptions,
+.chapter-body ul.structured-list--automation,
+.chapter-body ul.structured-list--actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 26px;
+  border-left: 5px solid var(--chapter-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--odp-soft);
+  padding: 20px 22px 20px 46px;
+  list-style: none;
+}
+
+.chapter-body ul.structured-list--evidence > li,
+.chapter-body ul.structured-list--outcomes > li,
+.chapter-body ul.structured-list--audience > li,
+.chapter-body ul.structured-list--assumptions > li,
+.chapter-body ul.structured-list--automation > li,
+.chapter-body ul.structured-list--actions > li {
+  position: relative;
+  padding: 2px 0;
+}
+
+.chapter-body ul.structured-list--evidence > li::before,
+.chapter-body ul.structured-list--outcomes > li::before,
+.chapter-body ul.structured-list--audience > li::before,
+.chapter-body ul.structured-list--assumptions > li::before,
+.chapter-body ul.structured-list--automation > li::before,
+.chapter-body ul.structured-list--actions > li::before {
+  position: absolute;
+  top: 0.45em;
+  left: -22px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--chapter-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.chapter-body ul.structured-list--evidence {
+  background: #f2edf7;
+}
+
+.chapter-body ul.structured-list--evidence > li::before {
+  border-radius: 2px;
+  background: var(--chapter-accent);
+}
+
+.chapter-body ul.structured-list--questions {
+  border-top: 1px solid var(--odp-border);
+  border-bottom: 1px solid var(--odp-border);
+  padding: 6px 0;
+  list-style: none;
+}
+
+.chapter-body ul.structured-list--questions > li {
+  position: relative;
+  min-height: 52px;
+  border-bottom: 1px solid #ebe5ee;
+  padding: 13px 14px 13px 54px;
+  color: var(--odp-ink);
+  font-weight: 500;
+}
+
+.chapter-body ul.structured-list--questions > li:last-child,
+.chapter-body ol.structured-list--practices > li:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.chapter-body ul.structured-list--questions > li::before {
+  position: absolute;
+  top: 11px;
+  left: 7px;
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--chapter-accent);
+  color: #fff;
+  content: "?";
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.chapter-body ul.structured-list--measures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  border-top: 1px solid var(--odp-border);
+  border-bottom: 1px solid var(--odp-border);
+  padding: 8px 0;
+  list-style: none;
+}
+
+.chapter-body ul.structured-list--measures > li {
+  position: relative;
+  border-bottom: 1px solid #ebe5ee;
+  padding: 11px 8px 11px 22px;
+}
+
+.chapter-body ul.structured-list--measures > li::before {
+  position: absolute;
+  top: 17px;
+  left: 2px;
+  width: 10px;
+  height: 3px;
+  background: var(--chapter-accent);
+  content: "";
+}
+
+.chapter-body ul.structured-list--decisions,
+.chapter-body ul.structured-list--patterns,
+.chapter-body ul.structured-list--taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.chapter-body ul.structured-list--decisions > li,
+.chapter-body ul.structured-list--patterns > li,
+.chapter-body ul.structured-list--taxonomy > li {
+  margin: 0;
+  border: 1px solid var(--odp-border);
+  border-left: 4px solid var(--chapter-accent);
+  border-radius: 4px;
+  background: var(--odp-soft);
+  padding: 7px 11px;
+  color: var(--odp-ink);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .chapter-body p,
 .chapter-body ul,
 .chapter-body ol,
@@ -1026,6 +1277,27 @@ h6:hover .heading-anchor,
   .chapter-body h3 {
     font-size: 1.35rem;
   }
+
+  .chapter-body .capability-heading {
+    margin-top: 52px;
+    padding: 15px 15px 14px;
+    font-size: 1.18rem;
+  }
+
+  .chapter-body ol.structured-list--practices,
+  .chapter-body ul.structured-list--evidence,
+  .chapter-body ul.structured-list--outcomes,
+  .chapter-body ul.structured-list--audience,
+  .chapter-body ul.structured-list--assumptions,
+  .chapter-body ul.structured-list--automation,
+  .chapter-body ul.structured-list--actions,
+  .chapter-body ul.structured-list--measures {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-body ol.structured-list--practices > li:nth-last-child(2) {
+    border-bottom: 1px solid #ebe5ee;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1192,6 +1464,33 @@ h6:hover .heading-anchor,
   .chapter-body h4 {
     margin: 6mm 0 2.5mm;
     font-size: 11.5pt;
+  }
+
+  .chapter-body .capability-heading {
+    margin-top: 9mm;
+    border-left-width: 1.5mm;
+    padding: 3.5mm 4mm;
+    font-size: 14pt;
+  }
+
+  .chapter-body .semantic-heading--purpose + p {
+    padding: 3mm 4mm;
+    font-size: 9.5pt;
+  }
+
+  .chapter-body ol.structured-list--practices,
+  .chapter-body ul.structured-list--evidence,
+  .chapter-body ul.structured-list--outcomes,
+  .chapter-body ul.structured-list--audience,
+  .chapter-body ul.structured-list--assumptions,
+  .chapter-body ul.structured-list--automation,
+  .chapter-body ul.structured-list--actions,
+  .chapter-body ul.structured-list--measures {
+    gap: 1.5mm 5mm;
+  }
+
+  .chapter-body .structured-list > li {
+    break-inside: avoid-page;
   }
 
   .chapter-body p,

@@ -26,6 +26,10 @@ assert.doesNotMatch(index, /\n---\n/);
 assert.doesNotMatch(index, /(?:href|src)="\//);
 assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must not link to Markdown source paths");
 assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "Expected nine framework illustrations");
+assert.match(index, /class="capability-heading"/, "Capability headings must receive publication styling");
+assert.match(index, /structured-list structured-list--practices/, "Practice lists must receive semantic styling");
+assert.match(index, /structured-list structured-list--evidence/, "Evidence lists must receive semantic styling");
+assert.match(index, /structured-list structured-list--questions/, "Assurance questions must receive semantic styling");
 
 let lastChapterPosition = -1;
 for (const chapter of manifest.chapters) {

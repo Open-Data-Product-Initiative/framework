@@ -59,6 +59,25 @@ function renderMarkdown(source, chapter) {
   const md = new MarkdownIt({ html: false, linkify: true, typographer: true });
   const seen = new Map();
   const headings = [];
+  const semanticSectionKinds = new Map([
+    ["purpose", "purpose"],
+    ["operating intent", "intent"],
+    ["expected outcomes", "outcomes"],
+    ["practices", "practices"],
+    ["evidence", "evidence"],
+    ["mandatory evidence", "evidence"],
+    ["example measures", "measures"],
+    ["assurance questions", "questions"],
+    ["assessment expectations", "questions"],
+    ["lifecycle decisions", "decisions"],
+    ["operational patterns", "patterns"],
+    ["value classes", "taxonomy"],
+    ["attribution classes", "taxonomy"],
+    ["intended users", "audience"],
+    ["assumptions", "assumptions"],
+    ["recommended automation", "automation"],
+    ["minimum implementation baseline", "outcomes"]
+  ]);
   const defaultHeadingOpen = md.renderer.rules.heading_open
     ?? ((tokens, index, options, env, self) => self.renderToken(tokens, index, options));
 
@@ -71,6 +90,7 @@ function renderMarkdown(source, chapter) {
       const displayLevel = Math.min(6, originalLevel + 1);
       const inline = state.tokens[index + 1];
       const text = inline?.content ?? "Section";
+      const normalizedText = text.toLowerCase().replace(/^\d+\.\s*/, "").trim();
       const base = `${chapter.id}-${slugify(text)}`;
       const occurrence = (seen.get(base) ?? 0) + 1;
       seen.set(base, occurrence);
@@ -79,10 +99,35 @@ function renderMarkdown(source, chapter) {
       token.tag = `h${displayLevel}`;
       token.attrSet("id", id);
       token.meta = { id };
+      if (/^C\d+\.\s/.test(text)) token.attrJoin("class", "capability-heading");
+      if (/^F\d+\.\s/.test(text)) token.attrJoin("class", "principle-heading");
+      if (/^(?:Step|Wave)\s+\d+\./.test(text)) token.attrJoin("class", "progression-heading");
+      if (/^Level\s+\d+:/.test(text)) token.attrJoin("class", "maturity-heading");
+      const semanticKind = semanticSectionKinds.get(normalizedText);
+      if (semanticKind) {
+        token.attrJoin("class", `semantic-heading semantic-heading--${semanticKind}`);
+        token.meta.semanticKind = semanticKind;
+      }
       const closing = state.tokens.find((candidate, closingIndex) => closingIndex > index && candidate.type === "heading_close");
       if (closing) closing.tag = `h${displayLevel}`;
 
       if (originalLevel === 2) headings.push({ id, title: text });
+    }
+
+    let currentSemanticKind = null;
+    for (let index = 0; index < state.tokens.length; index += 1) {
+      const token = state.tokens[index];
+      if (token.type === "heading_open") {
+        currentSemanticKind = token.meta?.semanticKind ?? null;
+        const headingText = state.tokens[index + 1]?.content ?? "";
+        if (/^(?:Step|Wave)\s+\d+\./.test(headingText)) currentSemanticKind = "actions";
+      } else if (
+        currentSemanticKind
+        && token.level === 0
+        && (token.type === "ordered_list_open" || token.type === "bullet_list_open")
+      ) {
+        token.attrJoin("class", `structured-list structured-list--${currentSemanticKind}`);
+      }
     }
   });
 
