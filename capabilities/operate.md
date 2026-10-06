@@ -1,6 +1,6 @@
 ---
 title: OPERATE Capability Reference
-version: 0.1.0
+version: 0.2.0
 status: draft
 date: 2026-10-06
 capabilities: [C8, C9, C10, C11]

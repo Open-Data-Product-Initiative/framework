@@ -2,6 +2,7 @@
 """Compose stable A4 pages and apply publication metadata."""
 
 from pathlib import Path
+import json
 import sys
 
 import fitz
@@ -12,6 +13,8 @@ FONT_DIRECTORY = ROOT / "publication" / "assets" / "fonts"
 REGULAR_FONT = FONT_DIRECTORY / "Poppins-Regular.ttf"
 SEMIBOLD_FONT = FONT_DIRECTORY / "Poppins-SemiBold.ttf"
 RUNNING_COLOR = (0.43, 0.38, 0.46)
+MANIFEST = json.loads((ROOT / "publication" / "manifest.json").read_text(encoding="utf-8"))
+VERSION_LABEL = f"v{MANIFEST['version']} - {MANIFEST['status']}"
 
 
 def add_running_matter(page: fitz.Page, page_number: int, page_count: int) -> None:
@@ -30,7 +33,7 @@ def add_running_matter(page: fitz.Page, page_number: int, page_count: int) -> No
     )
     page.insert_textbox(
         fitz.Rect(width - 180, 17, width - 48, 33),
-        "v0.1.0 - Draft",
+        VERSION_LABEL,
         fontname="DPOFRegular",
         fontsize=7.5,
         color=RUNNING_COLOR,

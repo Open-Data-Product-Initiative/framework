@@ -1,6 +1,6 @@
 ---
 title: Versioning Policy
-version: 0.1.0
+version: 0.2.0
 status: draft
 date: 2026-10-06
 ---
@@ -15,7 +15,7 @@ Use semantic-style framework versions:
 
 Example:
 
-`0.1.0`
+`0.2.0`
 
 ## 2. Major version
 

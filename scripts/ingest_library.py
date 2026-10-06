@@ -19,7 +19,7 @@ from library_support import ROOT, extract_html, load_collections, sources_by_id
 
 CACHE = ROOT / "library" / "cache"
 EXTRACTED = ROOT / "library" / "extracted"
-USER_AGENT = "DataProductOperatingFrameworkResearch/0.1 (+https://opendataproducts.org/framework/)"
+USER_AGENT = "DataProductOperatingFrameworkResearch/0.2 (+https://opendataproducts.org/framework/)"
 
 
 def arguments() -> argparse.Namespace:

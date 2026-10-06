@@ -32,7 +32,8 @@ for (const phrase of [
   "Assessment Standard",
   "Implementation Playbook",
   "Glossary",
-  "CC BY 4.0"
+  "CC BY 4.0",
+  manifest.version
 ]) {
   assert(extracted.includes(phrase), `PDF text is missing: ${phrase}`);
 }

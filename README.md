@@ -1,6 +1,6 @@
 ---
 title: Data Product Operating Framework
-version: 0.1.0
+version: 0.2.0
 status: draft
 date: 2026-10-06
 ---
@@ -162,8 +162,8 @@ npm run publication
 The pipeline writes:
 
 - `dist/index.html` — standalone responsive framework publication
-- `dist/downloads/data-product-operating-framework-v0.1.0.pdf` — PDF served by the website
-- `output/pdf/data-product-operating-framework-v0.1.0.pdf` — canonical local PDF artifact
+- `dist/downloads/data-product-operating-framework-v0.2.0.pdf` — PDF served by the website
+- `output/pdf/data-product-operating-framework-v0.2.0.pdf` — canonical local PDF artifact
 
 For HTML-only validation during editing:
 
@@ -185,4 +185,4 @@ When sharing or adapting the material, credit the **Data Product Operating Frame
 
 ## Status
 
-This repository currently contains the draft Core v0.1, fourteen capability definitions and two draft implementation profiles. Draft material is open for review but must not be represented as a released or adopted framework version.
+This repository currently contains the draft Core v0.2, fourteen capability definitions and two draft implementation profiles. Draft material is open for review but must not be represented as a released or adopted framework version.

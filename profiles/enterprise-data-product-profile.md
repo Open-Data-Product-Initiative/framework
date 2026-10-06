@@ -1,6 +1,6 @@
 ---
 title: Enterprise Data Product Profile
-version: 0.1.0
+version: 0.2.0
 status: draft
 date: 2026-10-06
 purpose: Provide the baseline implementation profile for organisations managing enterprise data products through conventional enterprise systems and human-led operating models.

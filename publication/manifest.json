@@ -1,7 +1,7 @@
 {
   "title": "Data Product Operating Framework",
   "shortTitle": "Data Product Framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "Draft",
   "date": "2026-10-06",
   "description": "One universal operating model for directing, defining, operating and assuring data products, with enterprise and AI-agent-first implementation profiles.",
@@ -9,7 +9,7 @@
   "siteUrl": "https://opendataproducts.org/framework/",
   "repositoryUrl": "https://github.com/Open-Data-Product-Initiative/framework",
   "homepageUrl": "https://opendataproducts.org/",
-  "pdfFilename": "data-product-operating-framework-v0.1.0.pdf",
+  "pdfFilename": "data-product-operating-framework-v0.2.0.pdf",
   "chapters": [
     {
       "id": "core",

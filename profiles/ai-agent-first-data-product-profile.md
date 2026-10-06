@@ -1,6 +1,6 @@
 ---
 title: AI-Agent-First Data Product Profile
-version: 0.1.0
+version: 0.2.0
 status: draft
 date: 2026-10-06
 purpose: Define the stronger requirements for data product environments where AI agents directly discover, interpret, access, combine or act on data products.
