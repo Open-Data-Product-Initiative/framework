@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.venv/
+.vscode/
+node_modules/
+__pycache__/
+*.py[cod]
+dist/
+output/pdf/
+site/
+tmp/pdfs/

@@ -1,0 +1,36 @@
+name: Documentation correction
+description: Report an editorial error, ambiguity, broken link or inconsistent term
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Document and section
+      placeholder: framework-core.md, section 13
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current problem
+      description: Quote only the minimum text needed to identify the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true
+  - type: dropdown
+    id: meaning
+    attributes:
+      label: Does this change normative meaning?
+      options:
+        - No
+        - Yes
+        - Unsure
+    validations:
+      required: true

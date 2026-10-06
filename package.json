@@ -1,0 +1,20 @@
+{
+  "name": "dataproduct-framework",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Publication tooling for the Data Product Operating Framework.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_publication.mjs",
+    "build:pdf": "node scripts/render_pdf.mjs",
+    "test": "python3 scripts/validate_repository.py && npm run build && node scripts/test_publication.mjs",
+    "test:pdf": "node scripts/validate_pdf.mjs",
+    "publication": "npm test && npm run build:pdf && npm run test:pdf"
+  },
+  "dependencies": {
+    "markdown-it": "14.3.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "title": "Data Product Operating Framework",
+  "shortTitle": "Data Product Framework",
+  "version": "0.1.0",
+  "status": "Draft",
+  "date": "2026-10-06",
+  "description": "An open operating model for directing, defining, operating and assuring data products from business demand to measurable value.",
+  "license": "CC BY 4.0",
+  "siteUrl": "https://opendataproducts.org/framework/",
+  "repositoryUrl": "https://github.com/Open-Data-Product-Initiative/framework",
+  "homepageUrl": "https://opendataproducts.org/",
+  "pdfFilename": "data-product-operating-framework-v0.1.0.pdf",
+  "chapters": [
+    {
+      "id": "core",
+      "title": "Framework Core",
+      "navLabel": "Core",
+      "eyebrow": "Foundation",
+      "tone": "core",
+      "source": "framework-core.md"
+    },
+    {
+      "id": "direct",
+      "title": "DIRECT",
+      "navLabel": "DIRECT",
+      "eyebrow": "Function 1",
+      "tone": "direct",
+      "source": "capabilities/direct.md"
+    },
+    {
+      "id": "define",
+      "title": "DEFINE",
+      "navLabel": "DEFINE",
+      "eyebrow": "Function 2",
+      "tone": "define",
+      "source": "capabilities/define.md"
+    },
+    {
+      "id": "operate",
+      "title": "OPERATE",
+      "navLabel": "OPERATE",
+      "eyebrow": "Function 3",
+      "tone": "operate",
+      "source": "capabilities/operate.md"
+    },
+    {
+      "id": "assure",
+      "title": "ASSURE",
+      "navLabel": "ASSURE",
+      "eyebrow": "Function 4",
+      "tone": "assure",
+      "source": "capabilities/assure.md"
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment Standard",
+      "navLabel": "Assessment",
+      "eyebrow": "Evaluation",
+      "tone": "assessment",
+      "source": "assessment-standard.md"
+    },
+    {
+      "id": "implementation",
+      "title": "Implementation Playbook",
+      "navLabel": "Implementation",
+      "eyebrow": "Adoption",
+      "tone": "implementation",
+      "source": "implementation-playbook.md"
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "navLabel": "Glossary",
+      "eyebrow": "Terminology",
+      "tone": "reference",
+      "source": "glossary.md"
+    },
+    {
+      "id": "profiles",
+      "title": "Framework Profiles",
+      "navLabel": "Profiles",
+      "eyebrow": "Context",
+      "tone": "reference",
+      "source": "profiles/README.md"
+    },
+    {
+      "id": "crosswalks",
+      "title": "Crosswalks",
+      "navLabel": "Crosswalks",
+      "eyebrow": "Alignment",
+      "tone": "reference",
+      "source": "crosswalks/README.md"
+    }
+  ]
+}

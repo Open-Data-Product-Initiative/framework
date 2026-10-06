@@ -1,0 +1,58 @@
+name: Framework change
+description: Propose a semantic, structural or normative framework change
+title: "[Framework]: "
+labels:
+  - framework
+body:
+  - type: markdown
+    attributes:
+      value: Explain the problem before proposing a solution. Do not include confidential information.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What cannot be understood, implemented or assessed correctly today?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Affected framework scope
+      description: List affected principles, functions, capabilities, artifacts, profiles, crosswalks or assessment rules.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide evidence and distinguish it from inference or preference.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest coherent change that addresses the problem.
+    validations:
+      required: true
+  - type: dropdown
+    id: compatibility
+    attributes:
+      label: Expected compatibility impact
+      options:
+        - Editorial only
+        - Additive
+        - Behavioural
+        - Breaking
+        - Unknown
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary checks
+      options:
+        - label: I have considered impacts on relevant ODPS-family specifications.
+          required: true
+        - label: I have not included confidential or personal information.
+          required: true
