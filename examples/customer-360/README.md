@@ -11,21 +11,21 @@ This synthetic example follows a single decision from objective to portfolio rev
 
 | Capability | Artifact |
 |---|---|
-| C1 | [Business objective](objective.md) |
-| C2 | [Use case and information need](objective.md) |
-| C3 | [Product decision](product-decision.md) |
+| C1 | Business objective record |
+| C2 | Use case and information-need record |
+| C3 | Portfolio decision record |
 | C4 | [ODPS product contract](product.odps.yaml) |
 | C5 | [ODPV terminology](vocabulary.odpv.yaml) |
-| C6 | [Declared commitments and conditions](declared-state.md) |
+| C6 | Declared commitments and conditions |
 | C7 | [ODPG relationship graph](relationships.odpg.yaml) |
 | C8 | [ODPC catalog reference](catalog.odpc.yaml) |
-| C9 | [Access evidence](assurance-evidence.md) |
-| C10 | [Version mismatch evidence](observed-state.md) |
+| C9 | Access decision evidence |
+| C10 | Version mismatch evidence |
 | C11 | [ODPR workflow](workflow.odpr.yaml) |
-| C12 | [Runtime observations](observed-state.md) |
-| C13 | [Control evidence](assurance-evidence.md) |
-| C14 | [Adoption, outcome and value review](value-review.md) |
+| C12 | Runtime observations |
+| C13 | Control evidence |
+| C14 | Adoption, outcome and value review |
 
 The chain is: objective → use case → information need → existing-product search → product decision → contract → vocabulary → relationships → catalog publication → access → version/change → workflow → runtime observation → control evidence → adoption → outcome → value → portfolio review.
 
-The [declared state](declared-state.md) and [observed state](observed-state.md) are intentionally separate. The 94.7% completeness, deployed version 2.3, unresolved entitlement and missing approval are not fields invented in ODPS or ODPR; they are operating evidence compared with the declared product state.
+The declared and observed states are intentionally separate. The 94.7% completeness, deployed version 2.3, unresolved entitlement and missing approval are not fields invented in ODPS or ODPR; they are operating evidence compared with the declared product state.

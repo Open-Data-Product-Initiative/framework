@@ -52,8 +52,8 @@
           { "label": "Baseline", "value": "18% annual churn" },
           { "label": "Target", "value": "14% by end of 2027" }
         ],
-        "href": "#customer-360-objective",
-        "linkLabel": "Open objective and use case"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -72,8 +72,8 @@
           { "label": "Consumer", "value": "Retention Analytics" },
           { "label": "Gap", "value": "Insufficient service interactions" }
         ],
-        "href": "#customer-360-objective",
-        "linkLabel": "Open use-case details"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -92,8 +92,8 @@
           { "label": "Decision", "value": "Extend Customer 360" },
           { "label": "Review", "value": "Six months after adoption" }
         ],
-        "href": "#customer-360-decision",
-        "linkLabel": "Open portfolio decision"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -112,8 +112,8 @@
           { "label": "Product", "value": "Customer 360" },
           { "label": "Declared version", "value": "2.4.0" }
         ],
-        "href": "examples/customer-360/product.odps.yaml",
-        "linkLabel": "Open ODPS contract"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -132,8 +132,8 @@
           { "label": "Vocabulary", "value": "ODPV 1.0" },
           { "label": "Material term", "value": "Service interaction" }
         ],
-        "href": "examples/customer-360/vocabulary.odpv.yaml",
-        "linkLabel": "Open ODPV vocabulary"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -152,8 +152,8 @@
           { "label": "Completeness", "value": "At least 98%" },
           { "label": "Freshness", "value": "No more than 60 minutes" }
         ],
-        "href": "#customer-360-declared-state",
-        "linkLabel": "Open declared state"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -172,8 +172,8 @@
           { "label": "Graph", "value": "ODPG 1.0" },
           { "label": "Confidence", "value": "High for governed edges" }
         ],
-        "href": "examples/customer-360/relationships.odpg.yaml",
-        "linkLabel": "Open ODPG graph"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -192,8 +192,8 @@
           { "label": "Visibility", "value": "Restricted" },
           { "label": "Catalog", "value": "ODPC 1.0" }
         ],
-        "href": "examples/customer-360/catalog.odpc.yaml",
-        "linkLabel": "Open ODPC catalog"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -212,8 +212,8 @@
           { "label": "Consumer", "value": "Retention Analytics" },
           { "label": "Scope", "value": "Approved read access" }
         ],
-        "href": "#customer-360-evidence",
-        "linkLabel": "Open access evidence"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -232,8 +232,8 @@
           { "label": "Declared", "value": "2.4.0" },
           { "label": "Observed", "value": "2.3.0" }
         ],
-        "href": "#customer-360-observed-state",
-        "linkLabel": "Open observed state"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -252,8 +252,8 @@
           { "label": "Workflow", "value": "ODPR 1.0" },
           { "label": "Human gate", "value": "Required for production" }
         ],
-        "href": "examples/customer-360/workflow.odpr.yaml",
-        "linkLabel": "Open ODPR workflow"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -272,8 +272,8 @@
           { "label": "Completeness", "value": "94.7% observed" },
           { "label": "Impact", "value": "Retention analysts may be affected" }
         ],
-        "href": "#customer-360-observed-state",
-        "linkLabel": "Open assurance observation"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -292,8 +292,8 @@
           { "label": "Access", "value": "One unresolved entitlement" },
           { "label": "Release", "value": "Approval record not found" }
         ],
-        "href": "#customer-360-evidence",
-        "linkLabel": "Open control evidence"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -312,8 +312,8 @@
           { "label": "Outcome", "value": "18% to 17.2% churn" },
           { "label": "Decision", "value": "Continue, expand or change" }
         ],
-        "href": "#customer-360-value-review",
-        "linkLabel": "Open value review"
+        "href": "#customer-360",
+        "linkLabel": "View the complete chain"
       }
     },
     {
@@ -390,54 +390,6 @@
       "eyebrow": "Scenario Scaffold",
       "tone": "implementation",
       "source": "examples/ai-agent-first/README.md"
-    },
-    {
-      "id": "customer-360-objective",
-      "title": "Customer 360 Objective and Use Case",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/objective.md"
-    },
-    {
-      "id": "customer-360-decision",
-      "title": "Customer 360 Product Decision",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/product-decision.md"
-    },
-    {
-      "id": "customer-360-declared-state",
-      "title": "Customer 360 Declared State",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/declared-state.md"
-    },
-    {
-      "id": "customer-360-observed-state",
-      "title": "Customer 360 Observed State",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/observed-state.md"
-    },
-    {
-      "id": "customer-360-evidence",
-      "title": "Customer 360 Assurance Evidence",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/assurance-evidence.md"
-    },
-    {
-      "id": "customer-360-value-review",
-      "title": "Customer 360 Value Review",
-      "nav": false,
-      "eyebrow": "Example Artifact",
-      "tone": "reference",
-      "source": "examples/customer-360/value-review.md"
     },
     {
       "id": "glossary",

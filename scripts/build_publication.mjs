@@ -283,11 +283,6 @@ const printCover = `<section class="print-cover" aria-label="Publication cover">
 function renderContextRail(chapter) {
   if (!chapter.context) return chapter.html;
 
-  const summaryMatch = chapter.html.match(
-    /^(<h3[^>]*semantic-heading--summary[^>]*>[\s\S]*?<\/h3>\s*<div class="table-wrap"[^>]*>[\s\S]*?<\/div>)([\s\S]*)$/
-  );
-  const summary = summaryMatch ? `<div class="chapter-summary">${summaryMatch[1]}</div>` : "";
-  const mainContent = summaryMatch ? summaryMatch[2] : chapter.html;
   const context = chapter.context;
   const details = (context.details ?? []).map((detail) => `<div>
     <dt>${escapeHtml(detail.label)}</dt>
@@ -297,8 +292,8 @@ function renderContextRail(chapter) {
     ? `<a class="context-link" href="${escapeHtml(context.href)}">${escapeHtml(context.linkLabel)} <span aria-hidden="true">→</span></a>`
     : "";
 
-  return `${summary}<div class="chapter-split">
-    <div class="chapter-main">${mainContent}</div>
+  return `<div class="chapter-split">
+    <div class="chapter-main">${chapter.html}</div>
     <aside class="chapter-context" aria-label="${escapeHtml(context.eyebrow)} example">
       <p class="context-eyebrow">${escapeHtml(context.eyebrow)}</p>
       <h3>${escapeHtml(context.title)}</h3>
