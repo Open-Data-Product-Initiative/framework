@@ -290,11 +290,17 @@ function renderChapterContext(chapter) {
   const link = context.href && context.linkLabel
     ? `<a class="context-link" href="${escapeHtml(context.href)}">${escapeHtml(context.linkLabel)} <span aria-hidden="true">→</span></a>`
     : "";
+  const examplePanels = context.panels ?? (context.example ? [context.example] : []);
+  const examples = examplePanels.map((panel) => `<section class="context-example" aria-label="${escapeHtml(panel.label)}">
+    <p class="context-example-label">${escapeHtml(panel.label)}</p>
+    <pre><code>${escapeHtml(panel.code)}</code></pre>
+  </section>`).join("");
 
   return `<aside class="chapter-context" aria-label="${escapeHtml(context.eyebrow)} example">
     <p class="context-eyebrow">${escapeHtml(context.eyebrow)}</p>
     <h3>${escapeHtml(context.title)}</h3>
     <p class="context-summary">${escapeHtml(context.summary)}</p>
+    ${examples}
     <dl class="context-details">${details}</dl>
     ${link}
   </aside>`;

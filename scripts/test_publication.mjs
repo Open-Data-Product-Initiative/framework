@@ -8,6 +8,11 @@ const dist = path.join(root, "dist");
 const manifest = JSON.parse(await fs.readFile(path.join(root, "publication", "manifest.json"), "utf8"));
 const index = await fs.readFile(path.join(dist, "index.html"), "utf8");
 const print = await fs.readFile(path.join(dist, "print.html"), "utf8");
+const contexts = manifest.chapters.map((chapter) => chapter.context).filter(Boolean);
+const expectedContextPanels = contexts.reduce(
+  (count, context) => count + (context.panels?.length ?? (context.example ? 1 : 0)),
+  0
+);
 
 assert.match(index, /<html lang="en"/);
 assert.equal(manifest.googleAnalyticsId, "G-2BRS2DSVKQ");
@@ -31,7 +36,10 @@ assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must n
 assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "Expected nine framework illustrations");
 assert.match(index, /class="capability-heading"/, "Capability headings must receive publication styling");
 assert.equal((index.match(/semantic-heading semantic-heading--summary/g) ?? []).length, 14, "Each capability must include a compact summary block");
-assert.equal((index.match(/class="chapter-context"/g) ?? []).length, 14, "Each capability must include its contextual example rail");
+assert.equal((index.match(/class="chapter-context"/g) ?? []).length, contexts.length, "Every declared context must render in the right column");
+assert.equal((index.match(/class="context-example"/g) ?? []).length, expectedContextPanels, "Every declared example panel must render in the right column");
+assert.match(index, /ODPS contract excerpt/, "The C4 example must show a contract excerpt in context");
+assert.match(index, /Runtime observation/, "The C12 example must show runtime evidence in context");
 assert.equal((index.match(/class="chapter-row(?:[\s"])/g) ?? []).length, manifest.chapters.length, "Every chapter must participate in the continuous two-column reading surface");
 assert.match(index, /Completeness failed/, "C12 must show its assurance example alongside the capability");
 assert.equal((index.match(/View the complete chain/g) ?? []).length, 14, "Each contextual rail must point to the single complete-chain example");

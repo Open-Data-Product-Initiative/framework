@@ -963,6 +963,32 @@ button {
   line-height: 1.52;
 }
 
+.context-example {
+  margin: 0 0 18px;
+}
+
+.context-example-label {
+  margin: 0 0 7px;
+  color: var(--odp-muted);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.context-example pre {
+  overflow-x: auto;
+  margin: 0;
+  border-left: 3px solid var(--chapter-accent);
+  background: #f1edf4;
+  padding: 13px 14px;
+  color: var(--odp-ink);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.62;
+}
+
 .context-details {
   margin: 0 0 16px;
   border-top: 1px solid var(--odp-border);

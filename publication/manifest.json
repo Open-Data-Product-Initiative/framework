@@ -18,7 +18,28 @@
       "navLabel": "Start Here",
       "eyebrow": "Pilot",
       "tone": "implementation",
-      "source": "getting-started.md"
+      "source": "getting-started.md",
+      "context": {
+        "eyebrow": "Customer 360 pilot",
+        "title": "One reviewable chain",
+        "summary": "The pilot proves one decision path before a broader operating-model rollout is considered.",
+        "panels": [
+          {
+            "label": "Minimum pilot chain",
+            "code": "objective → use case → product decision\n→ ODPS contract → catalog reference\n→ relationship graph → validation workflow\n→ runtime observation → value review"
+          },
+          {
+            "label": "End-of-pilot review",
+            "code": "review:\n  product: discoverable and governed\n  access: appropriate for the use case\n  commitment: observed, not assumed\n  outcome: compared with baseline\n  decision: continue, change or stop"
+          }
+        ],
+        "details": [
+          { "label": "Scope", "value": "One decision and one product extension" },
+          { "label": "Evidence", "value": "Declared state, observed state and review record" }
+        ],
+        "href": "#customer-360",
+        "linkLabel": "Open the complete example"
+      }
     },
     {
       "id": "core",
@@ -26,7 +47,24 @@
       "navLabel": "Core",
       "eyebrow": "Foundation",
       "tone": "core",
-      "source": "framework-core.md"
+      "source": "framework-core.md",
+      "context": {
+        "eyebrow": "Customer 360 map",
+        "title": "One chain across four functions",
+        "summary": "The same product decision remains traceable as it moves from demand to definition, operation and assurance.",
+        "panels": [
+          {
+            "label": "Function hand-offs",
+            "code": "DIRECT  → objective, use case, investment\nDEFINE  → contract, semantics, commitments\nOPERATE → catalog, access, workflow\nASSURE  → observation, controls, value review"
+          }
+        ],
+        "details": [
+          { "label": "Product", "value": "Customer 360 extension" },
+          { "label": "Decision owner", "value": "Portfolio board" }
+        ],
+        "href": "#customer-360",
+        "linkLabel": "View the chain evidence"
+      }
     },
     {
       "id": "capability-reference",
@@ -34,7 +72,24 @@
       "nav": false,
       "eyebrow": "Reference",
       "tone": "reference",
-      "source": "capabilities/reference/README.md"
+      "source": "capabilities/reference/README.md",
+      "context": {
+        "eyebrow": "How to use this reference",
+        "title": "Read by evidence path",
+        "summary": "Use the capability pages to find the decision, minimum practice and evidence required at each point in the chain.",
+        "panels": [
+          {
+            "label": "Reading route",
+            "code": "1. Name the decision\n2. Find the applicable capability\n3. Record declared state\n4. Collect operating evidence\n5. Review the next decision"
+          }
+        ],
+        "details": [
+          { "label": "Scope", "value": "14 capabilities across four functions" },
+          { "label": "Example", "value": "Customer 360 extension" }
+        ],
+        "href": "#c1",
+        "linkLabel": "Start with C1"
+      }
     },
     {
       "id": "c1",
@@ -48,6 +103,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Owned churn objective",
         "summary": "The retention director owns a measurable objective before any product extension is funded.",
+        "example": {
+          "label": "Objective record",
+          "code": "objective:\n  id: OBJ-REDUCE-CHURN\n  metric: annual_churn\n  baseline: 18 percent\n  target: 14 percent by 2027\n  owner: Retention Director"
+        },
         "details": [
           { "label": "Baseline", "value": "18% annual churn" },
           { "label": "Target", "value": "14% by end of 2027" }
@@ -68,6 +127,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "30-day churn-risk use case",
         "summary": "The team starts with the retention decision and information need, not a request for a new dashboard or product.",
+        "example": {
+          "label": "Use-case record",
+          "code": "use_case:\n  id: UC-CHURN-RISK-30D\n  decision: approve retention intervention\n  horizon: 30 days\n  needs: [purchases, service interactions, loyalty]\n  gap: service interactions"
+        },
         "details": [
           { "label": "Consumer", "value": "Retention Analytics" },
           { "label": "Gap", "value": "Insufficient service interactions" }
@@ -88,6 +151,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Extend, do not duplicate",
         "summary": "The portfolio board funds a service-interaction extension to the existing product instead of a churn-only duplicate.",
+        "example": {
+          "label": "Portfolio decision",
+          "code": "decision:\n  action: extend\n  product: Customer 360\n  reject: churn-risk duplicate\n  accountable_team: Customer Data Products\n  value_review: six months after adoption"
+        },
         "details": [
           { "label": "Decision", "value": "Extend Customer 360" },
           { "label": "Review", "value": "Six months after adoption" }
@@ -108,6 +175,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Authoritative contract",
         "summary": "The extension is represented by a schema-valid ODPS 4.2 contract rather than a catalog-only description.",
+        "example": {
+          "label": "ODPS contract excerpt",
+          "code": "product:\n  details:\n    en:\n      productID: customer-360\n      productVersion: '2.4.0'\n      visibility: restricted"
+        },
         "details": [
           { "label": "Product", "value": "Customer 360" },
           { "label": "Declared version", "value": "2.4.0" }
@@ -128,6 +199,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Shared retention terms",
         "summary": "Customer and service interaction have governed definitions so consumers and agents do not infer their own meaning.",
+        "example": {
+          "label": "ODPV term excerpt",
+          "code": "term:\n  id: ServiceInteraction\n  preferredLabel: Service interaction\n  definition: approved assisted customer contact\n  usedIn: [ODPS, ODPC, ODPG]"
+        },
         "details": [
           { "label": "Vocabulary", "value": "ODPV 1.0" },
           { "label": "Material term", "value": "Service interaction" }
@@ -148,6 +223,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Declared commitments",
         "summary": "The scenario separates tested expectations from later runtime evidence and keeps human release approval explicit.",
+        "example": {
+          "label": "Declared service state",
+          "code": "commitments:\n  completeness: '>= 98 percent'\n  freshness: '<= 60 minutes'\n  availability: '>= 99.9 percent'\n  release_approval: human required"
+        },
         "details": [
           { "label": "Completeness", "value": "At least 98%" },
           { "label": "Freshness", "value": "No more than 60 minutes" }
@@ -168,6 +247,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Traceable value path",
         "summary": "The graph connects the churn objective, use case, product, access policy and release workflow.",
+        "example": {
+          "label": "ODPG relationship excerpt",
+          "code": "edges:\n  - { from: UC-CHURN-RISK-30D, to: OBJ-REDUCE-CHURN, type: supports }\n  - { from: UC-CHURN-RISK-30D, to: DP-CUSTOMER-360, type: uses }\n  - { from: DP-CUSTOMER-360, to: POLICY-APPROVED-CONSUMERS, type: governedBy }"
+        },
         "details": [
           { "label": "Graph", "value": "ODPG 1.0" },
           { "label": "Confidence", "value": "High for governed edges" }
@@ -188,6 +271,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Discovery reference",
         "summary": "The catalog exposes the use case and product reference while pointing back to the authoritative ODPS contract.",
+        "example": {
+          "label": "ODPC catalog excerpt",
+          "code": "productReference:\n  productID: customer-360\n  productVersion: '2.4.0'\n  visibility: restricted\n  productModel: { standard: ODPS, format: yaml }"
+        },
         "details": [
           { "label": "Visibility", "value": "Restricted" },
           { "label": "Catalog", "value": "ODPC 1.0" }
@@ -208,6 +295,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Controlled retention access",
         "summary": "The access decision ties the retention group, permitted use and product version together before consumption begins.",
+        "example": {
+          "label": "Access decision",
+          "code": "access_decision:\n  consumer: Retention Analytics\n  use_case: UC-CHURN-RISK-30D\n  product: Customer 360 2.4.0\n  permission: approved read access"
+        },
         "details": [
           { "label": "Consumer", "value": "Retention Analytics" },
           { "label": "Scope", "value": "Approved read access" }
@@ -228,6 +319,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Version drift found",
         "summary": "The declared contract is 2.4.0 while the observed production version is 2.3.0, so the release state needs reconciliation.",
+        "example": {
+          "label": "Version reconciliation",
+          "code": "version_check:\n  declared: '2.4.0'\n  observed: '2.3.0'\n  status: failed\n  required_action: reconcile before release"
+        },
         "details": [
           { "label": "Declared", "value": "2.4.0" },
           { "label": "Observed", "value": "2.3.0" }
@@ -248,6 +343,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Release validation workflow",
         "summary": "A portable recipe validates the contract and graph before the separate human production-approval gate.",
+        "example": {
+          "label": "ODPR recipe excerpt",
+          "code": "steps:\n  - command: validate\n    document: product.odps.yaml\n  - command: validate\n    document: relationships.odpg.yaml\n  - gate: human production approval"
+        },
         "details": [
           { "label": "Workflow", "value": "ODPR 1.0" },
           { "label": "Human gate", "value": "Required for production" }
@@ -268,6 +367,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Completeness failed",
         "summary": "Freshness and availability pass, but 94.7% completeness fails the declared 98% threshold and triggers remediation.",
+        "example": {
+          "label": "Runtime observation",
+          "code": "observation:\n  completeness: { declared: '>= 98%', observed: '94.7%', status: failed }\n  freshness: { observed: '43 minutes', status: passed }\n  availability: { observed: '99.93%', status: passed }\n  action: open remediation finding"
+        },
         "details": [
           { "label": "Completeness", "value": "94.7% observed" },
           { "label": "Impact", "value": "Retention analysts may be affected" }
@@ -288,6 +391,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Control findings",
         "summary": "An unresolved entitlement and a missing latest-deployment approval are findings until a valid exception exists.",
+        "example": {
+          "label": "Control evidence",
+          "code": "findings:\n  - control: approved consumers only\n    observed: one unresolved entitlement\n  - control: human release approval\n    observed: latest-deployment record missing\n  status: open"
+        },
         "details": [
           { "label": "Access", "value": "One unresolved entitlement" },
           { "label": "Release", "value": "Approval record not found" }
@@ -308,6 +415,10 @@
         "eyebrow": "Customer 360 in context",
         "title": "Value review",
         "summary": "The retention workflow adopted the extension, but churn moved only to 17.2%; the review records cost and confounding factors before the next decision.",
+        "example": {
+          "label": "Six-month value review",
+          "code": "value_review:\n  adopted_workflow: churn-risk intervention\n  churn: { baseline: '18%', observed: '17.2%', target: '14%' }\n  confounders: [other campaigns, seasonality, completeness failure]\n  next_decision: continue, expand or change"
+        },
         "details": [
           { "label": "Outcome", "value": "18% to 17.2% churn" },
           { "label": "Decision", "value": "Continue, expand or change" }
@@ -322,7 +433,24 @@
       "nav": false,
       "eyebrow": "Supporting Detail",
       "tone": "direct",
-      "source": "capabilities/direct.md"
+      "source": "capabilities/direct.md",
+      "context": {
+        "eyebrow": "DIRECT example",
+        "title": "From objective to investment",
+        "summary": "The churn objective changes the product decision only because ownership, demand and investment are explicit.",
+        "panels": [
+          {
+            "label": "Decision record",
+            "code": "objective: reduce annual churn\nuse_case: identify 30-day churn risk\nportfolio_decision: extend Customer 360\naccountable_owner: Customer Data Products\nreview_date: six months after adoption"
+          }
+        ],
+        "details": [
+          { "label": "Rule", "value": "Objective is not a use case or a product" },
+          { "label": "Evidence", "value": "Approved objective and portfolio decision" }
+        ],
+        "href": "#c1",
+        "linkLabel": "Review DIRECT capabilities"
+      }
     },
     {
       "id": "define-foundation",
@@ -330,7 +458,24 @@
       "nav": false,
       "eyebrow": "Supporting Detail",
       "tone": "define",
-      "source": "capabilities/define.md"
+      "source": "capabilities/define.md",
+      "context": {
+        "eyebrow": "DEFINE example",
+        "title": "One connected definition",
+        "summary": "The contract is authoritative, while vocabulary, commitments and relationships provide the surrounding meaning.",
+        "panels": [
+          {
+            "label": "Artifact boundary",
+            "code": "ODPS: product identity and interface\nODPV: material business terms\nODPG: objective, use-case and policy links\nODPC: catalog and portfolio reference\nODPR: repeatable validation workflow"
+          }
+        ],
+        "details": [
+          { "label": "Authoritative source", "value": "Customer 360 ODPS 4.2 contract" },
+          { "label": "Version", "value": "2.4.0" }
+        ],
+        "href": "#c4",
+        "linkLabel": "Review DEFINE capabilities"
+      }
     },
     {
       "id": "operate-foundation",
@@ -338,7 +483,24 @@
       "nav": false,
       "eyebrow": "Supporting Detail",
       "tone": "operate",
-      "source": "capabilities/operate.md"
+      "source": "capabilities/operate.md",
+      "context": {
+        "eyebrow": "OPERATE example",
+        "title": "Declare, execute, evidence",
+        "summary": "The contract is declared once, then operational systems provide catalog, access, release and consumption evidence.",
+        "panels": [
+          {
+            "label": "Operational hand-off",
+            "code": "declare: Customer 360 2.4.0\npublish: restricted ODPC reference\nprovision: Retention Analytics access\nvalidate: ODPR recipe execution\nevidence: version, access and workflow records"
+          }
+        ],
+        "details": [
+          { "label": "Access", "value": "Purpose-bound approved read access" },
+          { "label": "Workflow", "value": "Portable validation before human approval" }
+        ],
+        "href": "#c8",
+        "linkLabel": "Review OPERATE capabilities"
+      }
     },
     {
       "id": "assure-foundation",
@@ -346,7 +508,24 @@
       "nav": false,
       "eyebrow": "Supporting Detail",
       "tone": "assure",
-      "source": "capabilities/assure.md"
+      "source": "capabilities/assure.md",
+      "context": {
+        "eyebrow": "ASSURE example",
+        "title": "Evidence changes the decision",
+        "summary": "The observed state is compared with commitments, then findings and value evidence reach an accountable reviewer.",
+        "panels": [
+          {
+            "label": "Assurance chain",
+            "code": "commitment: completeness >= 98%\nobservation: 94.7%\nstatus: failed\nimpact: retention analysts may be affected\nresponse: remediate and review investment"
+          }
+        ],
+        "details": [
+          { "label": "Separation", "value": "Declared target is not performance evidence" },
+          { "label": "Outcome", "value": "17.2% annual churn after adoption" }
+        ],
+        "href": "#c12",
+        "linkLabel": "Review ASSURE capabilities"
+      }
     },
     {
       "id": "assessment",
@@ -354,7 +533,24 @@
       "navLabel": "Assessment",
       "eyebrow": "Evaluation",
       "tone": "assessment",
-      "source": "assessment-standard.md"
+      "source": "assessment-standard.md",
+      "context": {
+        "eyebrow": "Assessment example",
+        "title": "Score evidence separately",
+        "summary": "A valid contract is necessary evidence, but it cannot prove that a capability is accountable, operational or effective.",
+        "panels": [
+          {
+            "label": "C12 assessment trace",
+            "code": "accountability: service owner named\npractice: measurement method documented\nevidence: 94.7% observation retained\noutcome: remediation and impact reviewed\nlimiting_dimension: outcome"
+          }
+        ],
+        "details": [
+          { "label": "Evidence period", "value": "Named evaluation window" },
+          { "label": "Level", "value": "Limited by the weakest dimension" }
+        ],
+        "href": "#c12",
+        "linkLabel": "See the C12 example"
+      }
     },
     {
       "id": "implementation",
@@ -362,7 +558,24 @@
       "navLabel": "Implementation",
       "eyebrow": "Adoption",
       "tone": "implementation",
-      "source": "implementation-playbook.md"
+      "source": "implementation-playbook.md",
+      "context": {
+        "eyebrow": "Implementation example",
+        "title": "Scale after the first review",
+        "summary": "The framework is introduced through a bounded decision path, rather than an estate-wide metadata exercise.",
+        "panels": [
+          {
+            "label": "First implementation sequence",
+            "code": "1. DIRECT: agree objective and product decision\n2. DEFINE: publish the smallest usable contract\n3. OPERATE: connect catalog, access and workflow\n4. ASSURE: collect observation and outcome\n5. REVIEW: continue, change or stop"
+          }
+        ],
+        "details": [
+          { "label": "Initial scope", "value": "One product and registered use case" },
+          { "label": "Expansion gate", "value": "Evidence-backed review decision" }
+        ],
+        "href": "#start-here",
+        "linkLabel": "Return to the pilot chain"
+      }
     },
     {
       "id": "customer-360",
@@ -371,7 +584,24 @@
       "group": "Examples",
       "eyebrow": "Worked Example",
       "tone": "implementation",
-      "source": "examples/customer-360/README.md"
+      "source": "examples/customer-360/README.md",
+      "context": {
+        "eyebrow": "Example map",
+        "title": "Fourteen connected artifacts",
+        "summary": "This example keeps portfolio records, operating evidence and ODPS-family artifacts distinct while tracing one decision end to end.",
+        "panels": [
+          {
+            "label": "Artifact sequence",
+            "code": "objective → use case → decision → contract\n→ vocabulary → graph → catalog → access\n→ version → workflow → observation\n→ controls → adoption → value review"
+          }
+        ],
+        "details": [
+          { "label": "Product", "value": "Customer 360 version 2.4.0" },
+          { "label": "Known findings", "value": "Completeness, version, access and approval" }
+        ],
+        "href": "#c1",
+        "linkLabel": "Return to the first capability"
+      }
     },
     {
       "id": "regulated-finance",
@@ -380,7 +610,24 @@
       "group": "Examples",
       "eyebrow": "Scenario Scaffold",
       "tone": "implementation",
-      "source": "examples/regulated-finance/README.md"
+      "source": "examples/regulated-finance/README.md",
+      "context": {
+        "eyebrow": "Scenario scaffold",
+        "title": "Regulatory-reporting product",
+        "summary": "Use this scenario to test how purpose, access, lineage, controls and review evidence stay connected for a restricted product.",
+        "panels": [
+          {
+            "label": "Control path",
+            "code": "reporting rule → product contract → purpose-bound access\n→ upstream lineage → release approval\n→ control execution → retained evidence\n→ exception and remediation"
+          }
+        ],
+        "details": [
+          { "label": "Focus", "value": "C6 through C13" },
+          { "label": "Boundary", "value": "Contract alone does not prove compliance" }
+        ],
+        "href": "#c13",
+        "linkLabel": "Review control assurance"
+      }
     },
     {
       "id": "ai-agent-first-example",
@@ -389,7 +636,28 @@
       "group": "Examples",
       "eyebrow": "Scenario Scaffold",
       "tone": "implementation",
-      "source": "examples/ai-agent-first/README.md"
+      "source": "examples/ai-agent-first/README.md",
+      "context": {
+        "eyebrow": "Agent scenario",
+        "title": "Governed agent decision path",
+        "summary": "The agent reads structured context, checks purpose and evidence, then stops when a human decision or missing evidence requires escalation.",
+        "panels": [
+          {
+            "label": "Permitted agent path",
+            "code": "discover → read contract → resolve vocabulary\n→ traverse allowed graph → check access\n→ verify version and assurance evidence\n→ execute permitted workflow or escalate"
+          },
+          {
+            "label": "Stop conditions",
+            "code": "ambiguous vocabulary | denied access | stale contract\nfailed quality | missing relationship\nhuman approval required"
+          }
+        ],
+        "details": [
+          { "label": "Output", "value": "Products, versions, graph path and checks performed" },
+          { "label": "Authority", "value": "No unrestricted autonomous access" }
+        ],
+        "href": "#ai-agent-first-profile",
+        "linkLabel": "Open the agent-first profile"
+      }
     },
     {
       "id": "glossary",
