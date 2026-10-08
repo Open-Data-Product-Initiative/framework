@@ -1,0 +1,51 @@
+schema: https://opendataproducts.org/odpg-v1.0/schema/odpg.yaml
+version: '1.0'
+kind: Graph
+graph:
+  metadata:
+    id: GRAPH-CUSTOMER-360
+    name:
+      en: Customer 360 value graph
+    description:
+      en: Objective, use-case and product context for the Customer 360 extension.
+    status: active
+    visibility: restricted
+    owner:
+      name: Customer Data Products
+  nodes:
+    - id: OBJ-REDUCE-CHURN
+      type: BusinessObjective
+      $ref: catalog.odpc.yaml#/catalog/businessObjectives/0
+    - id: UC-CHURN-RISK-30D
+      type: UseCase
+      $ref: catalog.odpc.yaml#/catalog/useCases/0
+    - id: DP-CUSTOMER-360
+      type: DataProduct
+      $ref: product.odps.yaml
+    - id: POLICY-APPROVED-CONSUMERS
+      type: Policy
+      $ref: declared-state.md#access
+    - id: WORKFLOW-CUSTOMER-360-RELEASE
+      type: Workflow
+      $ref: workflow.odpr.yaml
+  edges:
+    - from: UC-CHURN-RISK-30D
+      to: OBJ-REDUCE-CHURN
+      type: supports
+      confidence: high
+    - from: UC-CHURN-RISK-30D
+      to: DP-CUSTOMER-360
+      type: uses
+      confidence: high
+    - from: DP-CUSTOMER-360
+      to: OBJ-REDUCE-CHURN
+      type: contributesTo
+      confidence: medium
+    - from: DP-CUSTOMER-360
+      to: POLICY-APPROVED-CONSUMERS
+      type: governedBy
+      confidence: high
+    - from: WORKFLOW-CUSTOMER-360-RELEASE
+      to: DP-CUSTOMER-360
+      type: produces
+      confidence: high

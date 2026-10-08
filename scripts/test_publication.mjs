@@ -30,6 +30,7 @@ assert.doesNotMatch(index, /(?:href|src)="\//);
 assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must not link to Markdown source paths");
 assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "Expected nine framework illustrations");
 assert.match(index, /class="capability-heading"/, "Capability headings must receive publication styling");
+assert.equal((index.match(/semantic-heading semantic-heading--summary/g) ?? []).length, 14, "Each capability must include a compact summary block");
 assert.match(index, /structured-list structured-list--practices/, "Practice lists must receive semantic styling");
 assert.match(index, /structured-list structured-list--evidence/, "Evidence lists must receive semantic styling");
 assert.match(index, /structured-list structured-list--questions/, "Assurance questions must receive semantic styling");
@@ -44,6 +45,9 @@ for (const chapter of manifest.chapters) {
 
 for (let capability = 1; capability <= 14; capability += 1) {
   assert.match(index, new RegExp(`C${capability}\\.`), `Capability C${capability} is missing`);
+}
+for (const group of ["DIRECT", "DEFINE", "OPERATE", "ASSURE", "Examples"]) {
+  assert.match(index, new RegExp(`<li class="nav-group-title">${group}</li>`), `Navigation must include ${group}`);
 }
 
 const ids = [...index.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -77,6 +81,11 @@ const requiredFiles = [
   "assets/fonts/OFL.txt",
   "assets/fonts/Poppins-Regular.ttf",
   "assets/fonts/Poppins-SemiBold.ttf"
+  , "examples/customer-360/product.odps.yaml"
+  , "examples/customer-360/catalog.odpc.yaml"
+  , "examples/customer-360/relationships.odpg.yaml"
+  , "examples/customer-360/vocabulary.odpv.yaml"
+  , "examples/customer-360/workflow.odpr.yaml"
 ];
 for (const relativePath of requiredFiles) await fs.access(path.join(dist, relativePath));
 

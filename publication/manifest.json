@@ -13,6 +13,14 @@
   "pdfFilename": "data-product-operating-framework-v0.2.0.pdf",
   "chapters": [
     {
+      "id": "start-here",
+      "title": "Start Here: Implement One Complete Data Product Chain",
+      "navLabel": "Start Here",
+      "eyebrow": "Pilot",
+      "tone": "implementation",
+      "source": "getting-started.md"
+    },
+    {
       "id": "core",
       "title": "Framework Core",
       "navLabel": "Core",
@@ -21,34 +29,168 @@
       "source": "framework-core.md"
     },
     {
-      "id": "direct",
-      "title": "DIRECT",
-      "navLabel": "DIRECT",
-      "eyebrow": "Function 1",
+      "id": "capability-reference",
+      "title": "Capability Reference",
+      "nav": false,
+      "eyebrow": "Reference",
+      "tone": "reference",
+      "source": "capabilities/reference/README.md"
+    },
+    {
+      "id": "c1",
+      "title": "C1 Strategy and Objectives",
+      "navLabel": "C1 Strategy and Objectives",
+      "group": "DIRECT",
+      "eyebrow": "Capability 1 · DIRECT",
+      "tone": "direct",
+      "source": "capabilities/reference/c1-strategy-and-objectives.md"
+    },
+    {
+      "id": "c2",
+      "title": "C2 Demand and Use Case Management",
+      "navLabel": "C2 Demand and Use Case Management",
+      "group": "DIRECT",
+      "eyebrow": "Capability 2 · DIRECT",
+      "tone": "direct",
+      "source": "capabilities/reference/c2-demand-and-use-case-management.md"
+    },
+    {
+      "id": "c3",
+      "title": "C3 Portfolio, Investment and Accountability",
+      "navLabel": "C3 Portfolio, Investment and Accountability",
+      "group": "DIRECT",
+      "eyebrow": "Capability 3 · DIRECT",
+      "tone": "direct",
+      "source": "capabilities/reference/c3-portfolio-investment-and-accountability.md"
+    },
+    {
+      "id": "c4",
+      "title": "C4 Product Definition and Contract",
+      "navLabel": "C4 Product Definition and Contract",
+      "group": "DEFINE",
+      "eyebrow": "Capability 4 · DEFINE",
+      "tone": "define",
+      "source": "capabilities/reference/c4-product-definition-and-contract.md"
+    },
+    {
+      "id": "c5",
+      "title": "C5 Semantics and Vocabulary",
+      "navLabel": "C5 Semantics and Vocabulary",
+      "group": "DEFINE",
+      "eyebrow": "Capability 5 · DEFINE",
+      "tone": "define",
+      "source": "capabilities/reference/c5-semantics-and-vocabulary.md"
+    },
+    {
+      "id": "c6",
+      "title": "C6 Product Commitments and Usage Conditions",
+      "navLabel": "C6 Product Commitments and Usage Conditions",
+      "group": "DEFINE",
+      "eyebrow": "Capability 6 · DEFINE",
+      "tone": "define",
+      "source": "capabilities/reference/c6-product-commitments-and-usage-conditions.md"
+    },
+    {
+      "id": "c7",
+      "title": "C7 Relationships, Dependencies and Context",
+      "navLabel": "C7 Relationships, Dependencies and Context",
+      "group": "DEFINE",
+      "eyebrow": "Capability 7 · DEFINE",
+      "tone": "define",
+      "source": "capabilities/reference/c7-relationships-dependencies-and-context.md"
+    },
+    {
+      "id": "c8",
+      "title": "C8 Catalog, Publication and Discovery",
+      "navLabel": "C8 Catalog, Publication and Discovery",
+      "group": "OPERATE",
+      "eyebrow": "Capability 8 · OPERATE",
+      "tone": "operate",
+      "source": "capabilities/reference/c8-catalog-publication-and-discovery.md"
+    },
+    {
+      "id": "c9",
+      "title": "C9 Provisioning, Integration and Consumption",
+      "navLabel": "C9 Provisioning, Integration and Consumption",
+      "group": "OPERATE",
+      "eyebrow": "Capability 9 · OPERATE",
+      "tone": "operate",
+      "source": "capabilities/reference/c9-provisioning-integration-and-consumption.md"
+    },
+    {
+      "id": "c10",
+      "title": "C10 Lifecycle, Version and Change Management",
+      "navLabel": "C10 Lifecycle, Version and Change Management",
+      "group": "OPERATE",
+      "eyebrow": "Capability 10 · OPERATE",
+      "tone": "operate",
+      "source": "capabilities/reference/c10-lifecycle-version-and-change-management.md"
+    },
+    {
+      "id": "c11",
+      "title": "C11 Workflow, Automation and Agent Operations",
+      "navLabel": "C11 Workflow, Automation and Agent Operations",
+      "group": "OPERATE",
+      "eyebrow": "Capability 11 · OPERATE",
+      "tone": "operate",
+      "source": "capabilities/reference/c11-workflow-automation-and-agent-operations.md"
+    },
+    {
+      "id": "c12",
+      "title": "C12 Observability and Service Assurance",
+      "navLabel": "C12 Observability and Service Assurance",
+      "group": "ASSURE",
+      "eyebrow": "Capability 12 · ASSURE",
+      "tone": "assure",
+      "source": "capabilities/reference/c12-observability-and-service-assurance.md"
+    },
+    {
+      "id": "c13",
+      "title": "C13 Governance, Risk, Compliance and Control Assurance",
+      "navLabel": "C13 Governance, Risk, Compliance and Control Assurance",
+      "group": "ASSURE",
+      "eyebrow": "Capability 13 · ASSURE",
+      "tone": "assure",
+      "source": "capabilities/reference/c13-governance-risk-compliance-and-control-assurance.md"
+    },
+    {
+      "id": "c14",
+      "title": "C14 Adoption, Outcomes and Value Realisation",
+      "navLabel": "C14 Adoption, Outcomes and Value Realisation",
+      "group": "ASSURE",
+      "eyebrow": "Capability 14 · ASSURE",
+      "tone": "assure",
+      "source": "capabilities/reference/c14-adoption-outcomes-and-value-realisation.md"
+    },
+    {
+      "id": "direct-foundation",
+      "title": "DIRECT Foundation Detail",
+      "nav": false,
+      "eyebrow": "Supporting Detail",
       "tone": "direct",
       "source": "capabilities/direct.md"
     },
     {
-      "id": "define",
-      "title": "DEFINE",
-      "navLabel": "DEFINE",
-      "eyebrow": "Function 2",
+      "id": "define-foundation",
+      "title": "DEFINE Foundation Detail",
+      "nav": false,
+      "eyebrow": "Supporting Detail",
       "tone": "define",
       "source": "capabilities/define.md"
     },
     {
-      "id": "operate",
-      "title": "OPERATE",
-      "navLabel": "OPERATE",
-      "eyebrow": "Function 3",
+      "id": "operate-foundation",
+      "title": "OPERATE Foundation Detail",
+      "nav": false,
+      "eyebrow": "Supporting Detail",
       "tone": "operate",
       "source": "capabilities/operate.md"
     },
     {
-      "id": "assure",
-      "title": "ASSURE",
-      "navLabel": "ASSURE",
-      "eyebrow": "Function 4",
+      "id": "assure-foundation",
+      "title": "ASSURE Foundation Detail",
+      "nav": false,
+      "eyebrow": "Supporting Detail",
       "tone": "assure",
       "source": "capabilities/assure.md"
     },
@@ -67,6 +209,81 @@
       "eyebrow": "Adoption",
       "tone": "implementation",
       "source": "implementation-playbook.md"
+    },
+    {
+      "id": "customer-360",
+      "title": "Customer 360 Complete Chain",
+      "navLabel": "Customer 360",
+      "group": "Examples",
+      "eyebrow": "Worked Example",
+      "tone": "implementation",
+      "source": "examples/customer-360/README.md"
+    },
+    {
+      "id": "regulated-finance",
+      "title": "Regulated Finance Scenario",
+      "navLabel": "Regulated Finance",
+      "group": "Examples",
+      "eyebrow": "Scenario Scaffold",
+      "tone": "implementation",
+      "source": "examples/regulated-finance/README.md"
+    },
+    {
+      "id": "ai-agent-first-example",
+      "title": "AI-Agent-First Scenario",
+      "navLabel": "AI-Agent-First",
+      "group": "Examples",
+      "eyebrow": "Scenario Scaffold",
+      "tone": "implementation",
+      "source": "examples/ai-agent-first/README.md"
+    },
+    {
+      "id": "customer-360-objective",
+      "title": "Customer 360 Objective and Use Case",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/objective.md"
+    },
+    {
+      "id": "customer-360-decision",
+      "title": "Customer 360 Product Decision",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/product-decision.md"
+    },
+    {
+      "id": "customer-360-declared-state",
+      "title": "Customer 360 Declared State",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/declared-state.md"
+    },
+    {
+      "id": "customer-360-observed-state",
+      "title": "Customer 360 Observed State",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/observed-state.md"
+    },
+    {
+      "id": "customer-360-evidence",
+      "title": "Customer 360 Assurance Evidence",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/assurance-evidence.md"
+    },
+    {
+      "id": "customer-360-value-review",
+      "title": "Customer 360 Value Review",
+      "nav": false,
+      "eyebrow": "Example Artifact",
+      "tone": "reference",
+      "source": "examples/customer-360/value-review.md"
     },
     {
       "id": "glossary",

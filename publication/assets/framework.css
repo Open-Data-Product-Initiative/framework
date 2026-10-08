@@ -241,6 +241,23 @@ button {
   margin-bottom: 7px;
 }
 
+.nav-section-title,
+.nav-group-title {
+  padding: 16px 12px 5px;
+  color: rgba(255, 255, 255, 0.54);
+  font-family: var(--font-heading);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.nav-group-title {
+  padding-top: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .nav-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 38px;
@@ -968,6 +985,17 @@ button {
   overflow-x: auto;
   border: 1px solid var(--odp-border);
   border-radius: var(--radius);
+}
+
+.chapter-body h3.semantic-heading--summary + .table-wrap {
+  margin: 10px 0 30px;
+  border-left: 3px solid var(--chapter-accent);
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.chapter-body h3.semantic-heading--summary + .table-wrap table {
+  margin: 0;
 }
 
 table {

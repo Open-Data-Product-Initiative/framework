@@ -80,9 +80,11 @@ AI agents actively participate in discovery, product operations, workflows, assu
 ## Repository structure
 
 - [`framework-core.md`](framework-core.md) — universal framework definition
-- [`capabilities/`](capabilities/) — detailed capability references
+- [`getting-started.md`](getting-started.md) — one practical pilot chain
+- [`capabilities/reference/`](capabilities/reference/) — detailed C1-C14 capability references
 - [`assessment-standard.md`](assessment-standard.md) — common capability assessment model
 - [`implementation-playbook.md`](implementation-playbook.md) — implementation guidance
+- [`examples/`](examples/README.md) — worked scenarios and machine-readable example artifacts
 - [`glossary.md`](glossary.md) — common terminology
 - [`profiles/`](profiles/) — Core implementation profiles
 - [`crosswalks/`](crosswalks/) — mappings to other frameworks and standards
@@ -101,11 +103,12 @@ AI agents actively participate in discovery, product operations, workflows, assu
 
 ## Start here
 
+- [Start Here: Implement One Complete Data Product Chain](getting-started.md)
 - [Framework Core](framework-core.md)
-- [DIRECT Capability Reference](capabilities/direct.md)
-- [DEFINE Capability Reference](capabilities/define.md)
-- [OPERATE Capability Reference](capabilities/operate.md)
-- [ASSURE Capability Reference](capabilities/assure.md)
+- [Capability Reference: C1-C14](capabilities/reference/)
+- [Customer 360 Complete Chain](examples/customer-360/README.md)
+- [Regulated Finance Scenario](examples/regulated-finance/README.md)
+- [AI-Agent-First Scenario](examples/ai-agent-first/README.md)
 - [Assessment Standard](assessment-standard.md)
 - [Implementation Playbook](implementation-playbook.md)
 - [Enterprise Data Product Profile](profiles/enterprise-data-product-profile.md)
@@ -127,6 +130,8 @@ Operational systems execute work and provide runtime observations. The evidence 
 ODPS is machine-readable by design. Human-readable documentation and interfaces should increasingly be generated from the same underlying product artifacts used by software and AI agents.
 
 The framework defines how these standards and runtime responsibilities work together in an operating model. It does not redefine the standards.
+
+The current repository includes a validated Customer 360 example for ODPS, ODPC, ODPG, ODPV and ODPR. Its runtime observations, approval checks and value review are intentionally separate framework evidence records because those concepts are not forced into fields that the inspected schemas do not define.
 
 ## Publication model
 

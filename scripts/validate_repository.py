@@ -12,8 +12,42 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 
+CAPABILITY_REFERENCE_SOURCES = tuple(
+    Path(f"capabilities/reference/c{number}-{slug}.md")
+    for number, slug in (
+        (1, "strategy-and-objectives"),
+        (2, "demand-and-use-case-management"),
+        (3, "portfolio-investment-and-accountability"),
+        (4, "product-definition-and-contract"),
+        (5, "semantics-and-vocabulary"),
+        (6, "product-commitments-and-usage-conditions"),
+        (7, "relationships-dependencies-and-context"),
+        (8, "catalog-publication-and-discovery"),
+        (9, "provisioning-integration-and-consumption"),
+        (10, "lifecycle-version-and-change-management"),
+        (11, "workflow-automation-and-agent-operations"),
+        (12, "observability-and-service-assurance"),
+        (13, "governance-risk-compliance-and-control-assurance"),
+        (14, "adoption-outcomes-and-value-realisation"),
+    )
+)
+
+EXAMPLE_SOURCES = (
+    Path("examples/README.md"),
+    Path("examples/customer-360/README.md"),
+    Path("examples/customer-360/objective.md"),
+    Path("examples/customer-360/product-decision.md"),
+    Path("examples/customer-360/declared-state.md"),
+    Path("examples/customer-360/observed-state.md"),
+    Path("examples/customer-360/assurance-evidence.md"),
+    Path("examples/customer-360/value-review.md"),
+    Path("examples/regulated-finance/README.md"),
+    Path("examples/ai-agent-first/README.md"),
+)
+
 FRAMEWORK_SOURCES = (
     Path("README.md"),
+    Path("getting-started.md"),
     Path("VERSIONING.md"),
     Path("assessment-standard.md"),
     Path("framework-core.md"),
@@ -23,10 +57,13 @@ FRAMEWORK_SOURCES = (
     Path("capabilities/define.md"),
     Path("capabilities/direct.md"),
     Path("capabilities/operate.md"),
+    Path("capabilities/reference/README.md"),
+    *CAPABILITY_REFERENCE_SOURCES,
     Path("crosswalks/README.md"),
     Path("profiles/README.md"),
     Path("profiles/enterprise-data-product-profile.md"),
     Path("profiles/ai-agent-first-data-product-profile.md"),
+    *EXAMPLE_SOURCES,
 )
 
 REQUIRED_PATHS = FRAMEWORK_SOURCES + (
@@ -82,15 +119,17 @@ REQUIRED_PATHS = FRAMEWORK_SOURCES + (
     Path("scripts/build_library_index.py"),
     Path("scripts/propose_enrichment.py"),
     Path("scripts/validate_enrichment.py"),
+    Path("corpus/README.md"),
+    Path("corpus/records.jsonl"),
 )
 
 ALLOWED_STATUSES = {"draft", "candidate", "stable", "deprecated"}
 FRONT_MATTER_PATTERN = re.compile(r"\A---\n(?P<body>.*?)\n---\n", re.DOTALL)
 HEADING_PATTERN = re.compile(r"^(?P<marks>#{1,6})\s+(?P<title>.+?)\s*$", re.MULTILINE)
 LINK_PATTERN = re.compile(r"!?\[[^\]]*\]\((?P<target>[^)]+)\)")
-CAPABILITY_PATTERN = re.compile(r"^## C(?P<number>\d{1,2})\.\s+", re.MULTILINE)
+CAPABILITY_PATTERN = re.compile(r"^#{1,4} C(?P<number>\d{1,2})\.\s+", re.MULTILINE)
 CAPABILITY_HEADING_PATTERN = re.compile(
-    r"^#{2,4}\s+C(?P<number>\d{1,2})\.\s+(?P<name>.+?)\s*$", re.MULTILINE
+    r"^#{1,4}\s+C(?P<number>\d{1,2})\.\s+(?P<name>.+?)\s*$", re.MULTILINE
 )
 ASSESSMENT_ROW_PATTERN = re.compile(
     r"^\|\s*C(?P<number>\d{1,2})\s+(?P<name>[^|]+?)\s*\|", re.MULTILINE
@@ -283,12 +322,7 @@ def main() -> int:
 
     capability_numbers: list[int] = []
     capability_heading_matches: list[re.Match[str]] = []
-    for relative_path in (
-        Path("capabilities/direct.md"),
-        Path("capabilities/define.md"),
-        Path("capabilities/operate.md"),
-        Path("capabilities/assure.md"),
-    ):
+    for relative_path in CAPABILITY_REFERENCE_SOURCES:
         text = read_text(relative_path, errors)
         capability_numbers.extend(
             int(match.group("number")) for match in CAPABILITY_PATTERN.finditer(text)
@@ -310,6 +344,19 @@ def main() -> int:
     validate_capability_names(
         Path("capabilities/"), capability_heading_matches, errors, require_all=True
     )
+
+    capability_sections = (
+        "## Purpose", "## Why it matters", "## When it applies", "## Inputs",
+        "## Practices", "## Roles and accountability", "## Outputs",
+        "## ODPS family mapping", "## Evidence", "## Measures", "## Example",
+        "## Questions to ask", "## Common failure modes", "## Minimum implementation",
+        "## Advanced implementation", "## AI-Agent-First extension", "## Assessment levels 1-5",
+    )
+    for relative_path in CAPABILITY_REFERENCE_SOURCES:
+        text = read_text(relative_path, errors)
+        for section in capability_sections:
+            if section not in text:
+                errors.append(f"{relative_path}: missing required capability section {section!r}")
 
     for relative_path in (
         Path("framework-core.md"),

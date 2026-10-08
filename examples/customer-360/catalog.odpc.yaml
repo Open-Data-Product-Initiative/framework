@@ -1,0 +1,92 @@
+schema: https://opendataproducts.org/odpc-v1.0/schema/odpc.yaml
+version: '1.0'
+kind: Catalog
+catalog:
+  metadata:
+    id: CATALOG-CUSTOMER-360
+    name:
+      en: Customer retention portfolio
+    description:
+      en: Portfolio context for the Customer 360 extension decision.
+    owner:
+      organization: Example Retail Group
+      team: Customer Data Portfolio
+      role: Portfolio owner
+    status: active
+    graph:
+      standard: ODPG
+      version: '1.0'
+      $ref: relationships.odpg.yaml
+  businessObjectives:
+    - id: OBJ-REDUCE-CHURN
+      name:
+        en: Reduce annual customer churn
+      description:
+        en: Reduce annual customer churn from 18 percent to 14 percent by the end of 2027.
+      owner:
+        organization: Example Retail Group
+        team: Customer Retention
+        role: Objective owner
+      kpis:
+        - id: KPI-ANNUAL-CHURN
+          name:
+            en: Annual churn rate
+          description:
+            en: Percentage of active customers who churn during the year.
+          unit: percent
+          baseline:
+            value: 18
+            date: '2026-01-01'
+          target:
+            value: 14
+            date: '2027-12-31'
+      status: active
+      priority: high
+  useCases:
+    - id: UC-CHURN-RISK-30D
+      name:
+        en: Identify 30-day churn risk
+      description:
+        en: Help retention analysts identify customers at high risk of leaving within 30 days.
+      stakeholders:
+        - Retention Analytics
+        - Customer Service
+      decision:
+        en: Which eligible customers should receive an approved retention intervention?
+      expectedOutcome:
+        en: Earlier, targeted retention intervention with measurable contribution to reduced churn.
+      dataNeeds:
+        summary:
+          en: Recent purchases, service interactions, loyalty status and customer profile.
+        items:
+          - recent purchases
+          - service interactions
+          - loyalty status
+          - customer profile
+      status: active
+      priority: high
+  productReferences:
+    - id: PR-CUSTOMER-360
+      productID: customer-360
+      productVersion: '2.4.0'
+      name:
+        en: Customer 360
+      description:
+        en: Reusable customer profile product for governed retention decisions.
+      valueProposition:
+        en: Provide approved customer and service context for customer-retention decisions.
+      visibility: restricted
+      status: active
+      type: derived data
+      domains:
+        - customer
+      portfolioPriority: high
+      owner:
+        organization: Example Retail Group
+        team: Customer Data Products
+        role: Product owner
+      productModel:
+        standard: ODPS
+        version: '4.2'
+        format: yaml
+        $ref: product.odps.yaml

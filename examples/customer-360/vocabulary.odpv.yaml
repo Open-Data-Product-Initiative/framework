@@ -1,0 +1,62 @@
+schema: https://opendataproducts.org/odpv-v1.0/schema/odpv.schema.json
+version: 1.0.0
+id: VOCAB-CUSTOMER-360
+name:
+  en: Customer retention vocabulary
+description:
+  en: Controlled terms used in the Customer 360 churn-risk example.
+license:
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+publisher:
+  name: Example Retail Group
+  url: https://example.org
+sections:
+  - id: customer-retention
+    name:
+      en: Customer retention
+    description:
+      en: Concepts that require a shared interpretation in the example.
+    terms:
+      - id: Customer
+        uri: https://example.org/vocab/customer-360/Customer
+        type: object
+        status: draft
+        introducedIn: 1.0.0
+        preferredLabel:
+          en: Customer
+        definition:
+          en: A party with an active customer relationship under the organisation's approved customer definition.
+        alsoKnownAs:
+          en:
+            - customer
+        relatedTerms:
+          - ServiceInteraction
+        usedIn:
+          - ODPS
+          - ODPC
+          - ODPG
+        examples:
+          en:
+            - Customer 360 exposes approved customer context for retention analysis.
+      - id: ServiceInteraction
+        uri: https://example.org/vocab/customer-360/ServiceInteraction
+        type: object
+        status: draft
+        introducedIn: 1.0.0
+        preferredLabel:
+          en: Service interaction
+        definition:
+          en: A recorded assisted customer contact that is approved for use in the retention workflow.
+        alsoKnownAs:
+          en:
+            - assisted contact
+        relatedTerms:
+          - Customer
+        usedIn:
+          - ODPS
+          - ODPC
+          - ODPG
+        examples:
+          en:
+            - Service interactions are included when the retention use case has approved access.

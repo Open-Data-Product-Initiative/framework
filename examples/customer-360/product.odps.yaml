@@ -1,0 +1,13 @@
+schema: https://opendataproducts.org/v4.2/schema/odps.yaml
+version: 4.2
+product:
+  details:
+    en:
+      name: Customer 360
+      productID: customer-360
+      valueProposition: Provide approved consumer and service context for customer-retention decisions.
+      description: Reusable customer profile product extended with service-interaction context for the churn-risk use case.
+      visibility: restricted
+      status: active
+      productVersion: '2.4.0'
+      type: derived data

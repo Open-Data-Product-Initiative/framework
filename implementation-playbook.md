@@ -7,6 +7,8 @@ date: 2026-10-06
 
 # Implementation Playbook
 
+Start with [one complete data product chain](getting-started.md) before scaling the framework. The playbook explains how to establish the capabilities; the [capability reference](capabilities/reference/) defines the detail for each C1-C14 capability.
+
 ## 1. Purpose
 
 The playbook provides practical guidance for implementing the framework.

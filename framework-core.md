@@ -265,6 +265,8 @@ The universal Core contains:
 - evidence demonstrating execution and outcomes
 - measures evaluating performance
 
+The Core is the map, not the complete implementation guide. The [capability reference](capabilities/reference/README.md) explains the work, evidence and assessment levels for C1-C14; the [implementation playbook](implementation-playbook.md) explains how to establish the work in practice; the [examples](examples/customer-360/README.md) show a complete chain.
+
 Profiles adapt this shared foundation to specific operating environments. They are not separate frameworks.
 
 ## 6. Function 1: DIRECT

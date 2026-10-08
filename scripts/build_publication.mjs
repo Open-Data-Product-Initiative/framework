@@ -38,11 +38,11 @@ function resolvePublicationLink(href, chapter) {
   if (!href || href.startsWith("#") || /^[a-z][a-z0-9+.-]*:/i.test(href)) return href;
 
   const [rawPath, rawFragment = ""] = href.split("#", 2);
-  if (!rawPath.toLowerCase().endsWith(".md")) return href;
-
   const resolvedSource = path.posix.normalize(
     path.posix.join(path.posix.dirname(chapter.source), decodeURIComponent(rawPath))
   );
+  if (!rawPath.toLowerCase().endsWith(".md")) return resolvedSource;
+
   const targetChapterId = chapterIdBySource.get(resolvedSource);
   if (!targetChapterId) {
     throw new Error(
@@ -76,7 +76,8 @@ function renderMarkdown(source, chapter) {
     ["intended users", "audience"],
     ["assumptions", "assumptions"],
     ["recommended automation", "automation"],
-    ["minimum implementation baseline", "outcomes"]
+    ["minimum implementation baseline", "outcomes"],
+    ["capability summary", "summary"]
   ]);
   const defaultHeadingOpen = md.renderer.rules.heading_open
     ?? ((tokens, index, options, env, self) => self.renderToken(tokens, index, options));
@@ -188,7 +189,14 @@ const menuIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke
 const closeIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg>';
 
 function renderNavigation() {
-  const groups = chapters.map((chapter) => {
+  let currentGroup = null;
+  let capabilityLabelRendered = false;
+  const groups = chapters.filter((chapter) => chapter.nav !== false).map((chapter) => {
+    const groupLabel = chapter.group && chapter.group !== currentGroup
+      ? `${!capabilityLabelRendered && chapter.group !== "Examples" ? '<li class="nav-section-title">Capabilities</li>' : ''}<li class="nav-group-title">${escapeHtml(chapter.group)}</li>`
+      : "";
+    if (chapter.group && chapter.group !== currentGroup && chapter.group !== "Examples") capabilityLabelRendered = true;
+    currentGroup = chapter.group ?? null;
     const sublistId = `nav-${chapter.id}-sections`;
     const sublist = chapter.headings.length
       ? `<ul class="nav-sublist" id="${sublistId}">${chapter.headings.map((heading) =>
@@ -198,7 +206,7 @@ function renderNavigation() {
     const toggle = chapter.headings.length
       ? `<button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="${sublistId}" aria-label="Toggle ${escapeHtml(chapter.navLabel)} sections">${chevron}</button>`
       : "";
-    return `<li class="nav-group" style="--nav-accent:var(--${escapeHtml(chapter.tone)})">
+    return `${groupLabel}<li class="nav-group" style="--nav-accent:var(--${escapeHtml(chapter.tone)})">
       <div class="nav-row">
         <a class="nav-link" href="#${chapter.id}" data-nav-target="${chapter.id}">${escapeHtml(chapter.navLabel)}</a>
         ${toggle}
@@ -332,6 +340,7 @@ await fs.writeFile(path.join(distDirectory, "print.html"), printHtml);
 await fs.copyFile(path.join(publicationDirectory, "assets", "framework.css"), path.join(distDirectory, "assets", "framework.css"));
 await fs.copyFile(path.join(publicationDirectory, "assets", "framework.js"), path.join(distDirectory, "assets", "framework.js"));
 await fs.cp(path.join(root, "assets"), path.join(distDirectory, "assets"), { recursive: true });
+await fs.cp(path.join(root, "examples"), path.join(distDirectory, "examples"), { recursive: true });
 
 for (const file of await fs.readdir(path.join(publicationDirectory, "assets", "fonts"))) {
   await fs.copyFile(path.join(publicationDirectory, "assets", "fonts", file), path.join(distDirectory, "assets", "fonts", file));
