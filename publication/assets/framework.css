@@ -907,6 +907,99 @@ button {
   margin-bottom: 20px;
 }
 
+.chapter-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(248px, 0.43fr);
+  align-items: start;
+  gap: clamp(28px, 4vw, 58px);
+}
+
+.chapter-summary {
+  max-width: none;
+  margin-bottom: 30px;
+}
+
+.chapter-summary .table-wrap {
+  margin-bottom: 0;
+}
+
+.chapter-main {
+  min-width: 0;
+}
+
+.chapter-context {
+  position: sticky;
+  top: 22px;
+  border-top: 3px solid var(--chapter-accent);
+  border-bottom: 1px solid var(--odp-border);
+  background: #f8f5f9;
+  padding: 17px 18px 18px;
+}
+
+.context-eyebrow {
+  margin: 0 0 7px;
+  color: var(--chapter-accent);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.chapter-context h3 {
+  margin: 0 0 10px;
+  color: var(--odp-ink);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.context-summary {
+  margin: 0 0 16px;
+  color: var(--odp-text);
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+.context-details {
+  margin: 0 0 16px;
+  border-top: 1px solid var(--odp-border);
+}
+
+.context-details > div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--odp-border);
+}
+
+.context-details dt {
+  margin-bottom: 3px;
+  color: var(--odp-muted);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.context-details dd {
+  margin: 0;
+  color: var(--odp-ink);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.context-link {
+  color: var(--chapter-accent);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.context-link:hover {
+  text-decoration: underline;
+}
+
 .chapter-body ul,
 .chapter-body ol {
   padding-left: 1.45rem;
@@ -1074,6 +1167,18 @@ h6:hover .heading-anchor,
 
 .print-cover {
   display: none;
+}
+
+@media (max-width: 1199.98px) {
+  .chapter-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .chapter-context {
+    position: static;
+    max-width: 720px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1564,6 +1669,20 @@ h6:hover .heading-anchor,
 
   .chapter-body pre {
     white-space: pre-wrap;
+  }
+
+  .chapter-split {
+    display: block;
+  }
+
+  .chapter-summary {
+    margin-bottom: 6mm;
+  }
+
+  .chapter-context {
+    position: static;
+    margin-top: 6mm;
+    break-inside: avoid-page;
   }
 
   .table-wrap {

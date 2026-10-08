@@ -280,14 +280,43 @@ const printCover = `<section class="print-cover" aria-label="Publication cover">
   </div>
 </section>`;
 
-const chapterHtml = chapters.map((chapter) => `<article class="chapter chapter--${escapeHtml(chapter.tone)}" id="${escapeHtml(chapter.id)}" data-scroll-section>
+function renderContextRail(chapter) {
+  if (!chapter.context) return chapter.html;
+
+  const summaryMatch = chapter.html.match(
+    /^(<h3[^>]*semantic-heading--summary[^>]*>[\s\S]*?<\/h3>\s*<div class="table-wrap"[^>]*>[\s\S]*?<\/div>)([\s\S]*)$/
+  );
+  const summary = summaryMatch ? `<div class="chapter-summary">${summaryMatch[1]}</div>` : "";
+  const mainContent = summaryMatch ? summaryMatch[2] : chapter.html;
+  const context = chapter.context;
+  const details = (context.details ?? []).map((detail) => `<div>
+    <dt>${escapeHtml(detail.label)}</dt>
+    <dd>${escapeHtml(detail.value)}</dd>
+  </div>`).join("");
+  const link = context.href && context.linkLabel
+    ? `<a class="context-link" href="${escapeHtml(context.href)}">${escapeHtml(context.linkLabel)} <span aria-hidden="true">→</span></a>`
+    : "";
+
+  return `${summary}<div class="chapter-split">
+    <div class="chapter-main">${mainContent}</div>
+    <aside class="chapter-context" aria-label="${escapeHtml(context.eyebrow)} example">
+      <p class="context-eyebrow">${escapeHtml(context.eyebrow)}</p>
+      <h3>${escapeHtml(context.title)}</h3>
+      <p class="context-summary">${escapeHtml(context.summary)}</p>
+      <dl class="context-details">${details}</dl>
+      ${link}
+    </aside>
+  </div>`;
+}
+
+const chapterHtml = chapters.map((chapter) => `<article class="chapter chapter--${escapeHtml(chapter.tone)}${chapter.context ? " chapter--has-context" : ""}" id="${escapeHtml(chapter.id)}" data-scroll-section>
   <header class="chapter-heading">
     <div>
       <p class="chapter-kicker">${escapeHtml(chapter.eyebrow)}</p>
       <h2>${escapeHtml(chapter.title)}<a class="heading-anchor" href="#${escapeHtml(chapter.id)}" aria-label="Link to ${escapeHtml(chapter.title)}">#</a></h2>
     </div>
   </header>
-  <div class="chapter-body">${chapter.html}</div>
+  <div class="chapter-body">${renderContextRail(chapter)}</div>
 </article>`).join("\n");
 
 const content = `${printCover}<div class="document">

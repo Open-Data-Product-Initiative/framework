@@ -31,6 +31,10 @@ assert.doesNotMatch(index, /href="[^"]+\.md(?:#[^"]*)?"/, "Published HTML must n
 assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "Expected nine framework illustrations");
 assert.match(index, /class="capability-heading"/, "Capability headings must receive publication styling");
 assert.equal((index.match(/semantic-heading semantic-heading--summary/g) ?? []).length, 14, "Each capability must include a compact summary block");
+assert.equal((index.match(/class="chapter-context"/g) ?? []).length, 14, "Each capability must include its contextual example rail");
+assert.equal((index.match(/class="chapter-summary"/g) ?? []).length, 14, "Capability summaries must stay full width above the explanation and evidence split");
+assert.match(index, /Completeness failed/, "C12 must show its assurance example alongside the capability");
+assert.match(index, /Open ODPS contract/, "C4 must link to its contract artifact from the contextual example rail");
 assert.match(index, /structured-list structured-list--practices/, "Practice lists must receive semantic styling");
 assert.match(index, /structured-list structured-list--evidence/, "Evidence lists must receive semantic styling");
 assert.match(index, /structured-list structured-list--questions/, "Assurance questions must receive semantic styling");

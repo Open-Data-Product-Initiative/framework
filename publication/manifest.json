@@ -43,7 +43,18 @@
       "group": "DIRECT",
       "eyebrow": "Capability 1 · DIRECT",
       "tone": "direct",
-      "source": "capabilities/reference/c1-strategy-and-objectives.md"
+      "source": "capabilities/reference/c1-strategy-and-objectives.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Owned churn objective",
+        "summary": "The retention director owns a measurable objective before any product extension is funded.",
+        "details": [
+          { "label": "Baseline", "value": "18% annual churn" },
+          { "label": "Target", "value": "14% by end of 2027" }
+        ],
+        "href": "#customer-360-objective",
+        "linkLabel": "Open objective and use case"
+      }
     },
     {
       "id": "c2",
@@ -52,7 +63,18 @@
       "group": "DIRECT",
       "eyebrow": "Capability 2 · DIRECT",
       "tone": "direct",
-      "source": "capabilities/reference/c2-demand-and-use-case-management.md"
+      "source": "capabilities/reference/c2-demand-and-use-case-management.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "30-day churn-risk use case",
+        "summary": "The team starts with the retention decision and information need, not a request for a new dashboard or product.",
+        "details": [
+          { "label": "Consumer", "value": "Retention Analytics" },
+          { "label": "Gap", "value": "Insufficient service interactions" }
+        ],
+        "href": "#customer-360-objective",
+        "linkLabel": "Open use-case details"
+      }
     },
     {
       "id": "c3",
@@ -61,7 +83,18 @@
       "group": "DIRECT",
       "eyebrow": "Capability 3 · DIRECT",
       "tone": "direct",
-      "source": "capabilities/reference/c3-portfolio-investment-and-accountability.md"
+      "source": "capabilities/reference/c3-portfolio-investment-and-accountability.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Extend, do not duplicate",
+        "summary": "The portfolio board funds a service-interaction extension to the existing product instead of a churn-only duplicate.",
+        "details": [
+          { "label": "Decision", "value": "Extend Customer 360" },
+          { "label": "Review", "value": "Six months after adoption" }
+        ],
+        "href": "#customer-360-decision",
+        "linkLabel": "Open portfolio decision"
+      }
     },
     {
       "id": "c4",
@@ -70,7 +103,18 @@
       "group": "DEFINE",
       "eyebrow": "Capability 4 · DEFINE",
       "tone": "define",
-      "source": "capabilities/reference/c4-product-definition-and-contract.md"
+      "source": "capabilities/reference/c4-product-definition-and-contract.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Authoritative contract",
+        "summary": "The extension is represented by a schema-valid ODPS 4.2 contract rather than a catalog-only description.",
+        "details": [
+          { "label": "Product", "value": "Customer 360" },
+          { "label": "Declared version", "value": "2.4.0" }
+        ],
+        "href": "examples/customer-360/product.odps.yaml",
+        "linkLabel": "Open ODPS contract"
+      }
     },
     {
       "id": "c5",
@@ -79,7 +123,18 @@
       "group": "DEFINE",
       "eyebrow": "Capability 5 · DEFINE",
       "tone": "define",
-      "source": "capabilities/reference/c5-semantics-and-vocabulary.md"
+      "source": "capabilities/reference/c5-semantics-and-vocabulary.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Shared retention terms",
+        "summary": "Customer and service interaction have governed definitions so consumers and agents do not infer their own meaning.",
+        "details": [
+          { "label": "Vocabulary", "value": "ODPV 1.0" },
+          { "label": "Material term", "value": "Service interaction" }
+        ],
+        "href": "examples/customer-360/vocabulary.odpv.yaml",
+        "linkLabel": "Open ODPV vocabulary"
+      }
     },
     {
       "id": "c6",
@@ -88,7 +143,18 @@
       "group": "DEFINE",
       "eyebrow": "Capability 6 · DEFINE",
       "tone": "define",
-      "source": "capabilities/reference/c6-product-commitments-and-usage-conditions.md"
+      "source": "capabilities/reference/c6-product-commitments-and-usage-conditions.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Declared commitments",
+        "summary": "The scenario separates tested expectations from later runtime evidence and keeps human release approval explicit.",
+        "details": [
+          { "label": "Completeness", "value": "At least 98%" },
+          { "label": "Freshness", "value": "No more than 60 minutes" }
+        ],
+        "href": "#customer-360-declared-state",
+        "linkLabel": "Open declared state"
+      }
     },
     {
       "id": "c7",
@@ -97,7 +163,18 @@
       "group": "DEFINE",
       "eyebrow": "Capability 7 · DEFINE",
       "tone": "define",
-      "source": "capabilities/reference/c7-relationships-dependencies-and-context.md"
+      "source": "capabilities/reference/c7-relationships-dependencies-and-context.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Traceable value path",
+        "summary": "The graph connects the churn objective, use case, product, access policy and release workflow.",
+        "details": [
+          { "label": "Graph", "value": "ODPG 1.0" },
+          { "label": "Confidence", "value": "High for governed edges" }
+        ],
+        "href": "examples/customer-360/relationships.odpg.yaml",
+        "linkLabel": "Open ODPG graph"
+      }
     },
     {
       "id": "c8",
@@ -106,7 +183,18 @@
       "group": "OPERATE",
       "eyebrow": "Capability 8 · OPERATE",
       "tone": "operate",
-      "source": "capabilities/reference/c8-catalog-publication-and-discovery.md"
+      "source": "capabilities/reference/c8-catalog-publication-and-discovery.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Discovery reference",
+        "summary": "The catalog exposes the use case and product reference while pointing back to the authoritative ODPS contract.",
+        "details": [
+          { "label": "Visibility", "value": "Restricted" },
+          { "label": "Catalog", "value": "ODPC 1.0" }
+        ],
+        "href": "examples/customer-360/catalog.odpc.yaml",
+        "linkLabel": "Open ODPC catalog"
+      }
     },
     {
       "id": "c9",
@@ -115,7 +203,18 @@
       "group": "OPERATE",
       "eyebrow": "Capability 9 · OPERATE",
       "tone": "operate",
-      "source": "capabilities/reference/c9-provisioning-integration-and-consumption.md"
+      "source": "capabilities/reference/c9-provisioning-integration-and-consumption.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Controlled retention access",
+        "summary": "The access decision ties the retention group, permitted use and product version together before consumption begins.",
+        "details": [
+          { "label": "Consumer", "value": "Retention Analytics" },
+          { "label": "Scope", "value": "Approved read access" }
+        ],
+        "href": "#customer-360-evidence",
+        "linkLabel": "Open access evidence"
+      }
     },
     {
       "id": "c10",
@@ -124,7 +223,18 @@
       "group": "OPERATE",
       "eyebrow": "Capability 10 · OPERATE",
       "tone": "operate",
-      "source": "capabilities/reference/c10-lifecycle-version-and-change-management.md"
+      "source": "capabilities/reference/c10-lifecycle-version-and-change-management.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Version drift found",
+        "summary": "The declared contract is 2.4.0 while the observed production version is 2.3.0, so the release state needs reconciliation.",
+        "details": [
+          { "label": "Declared", "value": "2.4.0" },
+          { "label": "Observed", "value": "2.3.0" }
+        ],
+        "href": "#customer-360-observed-state",
+        "linkLabel": "Open observed state"
+      }
     },
     {
       "id": "c11",
@@ -133,7 +243,18 @@
       "group": "OPERATE",
       "eyebrow": "Capability 11 · OPERATE",
       "tone": "operate",
-      "source": "capabilities/reference/c11-workflow-automation-and-agent-operations.md"
+      "source": "capabilities/reference/c11-workflow-automation-and-agent-operations.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Release validation workflow",
+        "summary": "A portable recipe validates the contract and graph before the separate human production-approval gate.",
+        "details": [
+          { "label": "Workflow", "value": "ODPR 1.0" },
+          { "label": "Human gate", "value": "Required for production" }
+        ],
+        "href": "examples/customer-360/workflow.odpr.yaml",
+        "linkLabel": "Open ODPR workflow"
+      }
     },
     {
       "id": "c12",
@@ -142,7 +263,18 @@
       "group": "ASSURE",
       "eyebrow": "Capability 12 · ASSURE",
       "tone": "assure",
-      "source": "capabilities/reference/c12-observability-and-service-assurance.md"
+      "source": "capabilities/reference/c12-observability-and-service-assurance.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Completeness failed",
+        "summary": "Freshness and availability pass, but 94.7% completeness fails the declared 98% threshold and triggers remediation.",
+        "details": [
+          { "label": "Completeness", "value": "94.7% observed" },
+          { "label": "Impact", "value": "Retention analysts may be affected" }
+        ],
+        "href": "#customer-360-observed-state",
+        "linkLabel": "Open assurance observation"
+      }
     },
     {
       "id": "c13",
@@ -151,7 +283,18 @@
       "group": "ASSURE",
       "eyebrow": "Capability 13 · ASSURE",
       "tone": "assure",
-      "source": "capabilities/reference/c13-governance-risk-compliance-and-control-assurance.md"
+      "source": "capabilities/reference/c13-governance-risk-compliance-and-control-assurance.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Control findings",
+        "summary": "An unresolved entitlement and a missing latest-deployment approval are findings until a valid exception exists.",
+        "details": [
+          { "label": "Access", "value": "One unresolved entitlement" },
+          { "label": "Release", "value": "Approval record not found" }
+        ],
+        "href": "#customer-360-evidence",
+        "linkLabel": "Open control evidence"
+      }
     },
     {
       "id": "c14",
@@ -160,7 +303,18 @@
       "group": "ASSURE",
       "eyebrow": "Capability 14 · ASSURE",
       "tone": "assure",
-      "source": "capabilities/reference/c14-adoption-outcomes-and-value-realisation.md"
+      "source": "capabilities/reference/c14-adoption-outcomes-and-value-realisation.md",
+      "context": {
+        "eyebrow": "Customer 360 in context",
+        "title": "Value review",
+        "summary": "The retention workflow adopted the extension, but churn moved only to 17.2%; the review records cost and confounding factors before the next decision.",
+        "details": [
+          { "label": "Outcome", "value": "18% to 17.2% churn" },
+          { "label": "Decision", "value": "Continue, expand or change" }
+        ],
+        "href": "#customer-360-value-review",
+        "linkLabel": "Open value review"
+      }
     },
     {
       "id": "direct-foundation",
