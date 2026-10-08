@@ -528,11 +528,18 @@ button {
   padding-bottom: 100px;
 }
 
+.reading-flow {
+  position: relative;
+  background: linear-gradient(to right, transparent 61.9%, #f8f5f9 61.9%);
+}
+
 .publication-notice {
   margin: 0 0 52px;
   border-left: 4px solid var(--odp-violet);
   padding: 3px 0 3px 19px;
   color: var(--odp-muted);
+  width: 61.9%;
+  padding-right: clamp(30px, 4.5vw, 64px);
 }
 
 .publication-notice strong {
@@ -544,6 +551,17 @@ button {
   padding: 66px 0 36px;
   border-top: 1px solid var(--odp-border);
   scroll-margin-top: 30px;
+}
+
+.chapter-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.62fr) minmax(270px, 1fr);
+  align-items: stretch;
+}
+
+.chapter-row > .chapter {
+  min-width: 0;
+  padding-right: clamp(30px, 4.5vw, 64px);
 }
 
 .chapter:first-of-type {
@@ -907,27 +925,10 @@ button {
   margin-bottom: 20px;
 }
 
-.chapter-split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.62fr) minmax(270px, 1fr);
-  align-items: stretch;
-  border-top: 1px solid var(--odp-border);
-}
-
-.chapter-main {
-  min-width: 0;
-  padding: 0 clamp(30px, 4.5vw, 64px) 0 0;
-}
-
-.chapter-main > :first-child {
-  margin-top: 0;
-}
-
 .chapter-context {
   align-self: stretch;
   border-left: 1px solid var(--odp-border);
-  background: #f8f5f9;
-  padding: 24px clamp(20px, 2.5vw, 34px) 30px;
+  padding: 66px clamp(20px, 2.5vw, 34px) 30px;
 }
 
 .context-eyebrow {
@@ -1164,17 +1165,27 @@ h6:hover .heading-anchor,
 }
 
 @media (max-width: 1199.98px) {
-  .chapter-split {
+  .reading-flow {
+    background: transparent;
+  }
+
+  .publication-notice {
+    width: auto;
+    padding-right: 0;
+  }
+
+  .chapter-row {
     grid-template-columns: 1fr;
   }
 
-  .chapter-main {
+  .chapter-row > .chapter {
     padding-right: 0;
   }
 
   .chapter-context {
     border-top: 1px solid var(--odp-border);
     border-left: 0;
+    padding-top: 28px;
   }
 }
 
@@ -1668,8 +1679,10 @@ h6:hover .heading-anchor,
     white-space: pre-wrap;
   }
 
-  .chapter-split {
+  .reading-flow,
+  .chapter-row {
     display: block;
+    background: transparent;
   }
 
   .chapter-context {

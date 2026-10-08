@@ -280,9 +280,8 @@ const printCover = `<section class="print-cover" aria-label="Publication cover">
   </div>
 </section>`;
 
-function renderContextRail(chapter) {
-  if (!chapter.context) return chapter.html;
-
+function renderChapterContext(chapter) {
+  if (!chapter.context) return "";
   const context = chapter.context;
   const details = (context.details ?? []).map((detail) => `<div>
     <dt>${escapeHtml(detail.label)}</dt>
@@ -292,31 +291,33 @@ function renderContextRail(chapter) {
     ? `<a class="context-link" href="${escapeHtml(context.href)}">${escapeHtml(context.linkLabel)} <span aria-hidden="true">→</span></a>`
     : "";
 
-  return `<div class="chapter-split">
-    <div class="chapter-main">${chapter.html}</div>
-    <aside class="chapter-context" aria-label="${escapeHtml(context.eyebrow)} example">
-      <p class="context-eyebrow">${escapeHtml(context.eyebrow)}</p>
-      <h3>${escapeHtml(context.title)}</h3>
-      <p class="context-summary">${escapeHtml(context.summary)}</p>
-      <dl class="context-details">${details}</dl>
-      ${link}
-    </aside>
-  </div>`;
+  return `<aside class="chapter-context" aria-label="${escapeHtml(context.eyebrow)} example">
+    <p class="context-eyebrow">${escapeHtml(context.eyebrow)}</p>
+    <h3>${escapeHtml(context.title)}</h3>
+    <p class="context-summary">${escapeHtml(context.summary)}</p>
+    <dl class="context-details">${details}</dl>
+    ${link}
+  </aside>`;
 }
 
-const chapterHtml = chapters.map((chapter) => `<article class="chapter chapter--${escapeHtml(chapter.tone)}${chapter.context ? " chapter--has-context" : ""}" id="${escapeHtml(chapter.id)}" data-scroll-section>
-  <header class="chapter-heading">
-    <div>
-      <p class="chapter-kicker">${escapeHtml(chapter.eyebrow)}</p>
-      <h2>${escapeHtml(chapter.title)}<a class="heading-anchor" href="#${escapeHtml(chapter.id)}" aria-label="Link to ${escapeHtml(chapter.title)}">#</a></h2>
-    </div>
-  </header>
-  <div class="chapter-body">${renderContextRail(chapter)}</div>
-</article>`).join("\n");
+const chapterHtml = chapters.map((chapter) => `<div class="chapter-row${chapter.context ? " chapter-row--has-context" : ""}">
+  <article class="chapter chapter--${escapeHtml(chapter.tone)}" id="${escapeHtml(chapter.id)}" data-scroll-section>
+    <header class="chapter-heading">
+      <div>
+        <p class="chapter-kicker">${escapeHtml(chapter.eyebrow)}</p>
+        <h2>${escapeHtml(chapter.title)}<a class="heading-anchor" href="#${escapeHtml(chapter.id)}" aria-label="Link to ${escapeHtml(chapter.title)}">#</a></h2>
+      </div>
+    </header>
+    <div class="chapter-body">${chapter.html}</div>
+  </article>
+  ${renderChapterContext(chapter)}
+</div>`).join("\n");
 
 const content = `${printCover}<div class="document">
-  <aside class="publication-notice"><strong>Draft publication.</strong> Version ${escapeHtml(manifest.version)} is available for review and contribution; it is not an adopted framework release.</aside>
-  ${chapterHtml}
+  <div class="reading-flow">
+    <aside class="publication-notice"><strong>Draft publication.</strong> Version ${escapeHtml(manifest.version)} is available for review and contribution; it is not an adopted framework release.</aside>
+    ${chapterHtml}
+  </div>
 </div>`;
 
 const footer = `<footer class="site-footer"><div class="site-footer-inner">

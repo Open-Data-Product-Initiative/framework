@@ -32,7 +32,7 @@ assert.equal((index.match(/class="framework-illustration"/g) ?? []).length, 9, "
 assert.match(index, /class="capability-heading"/, "Capability headings must receive publication styling");
 assert.equal((index.match(/semantic-heading semantic-heading--summary/g) ?? []).length, 14, "Each capability must include a compact summary block");
 assert.equal((index.match(/class="chapter-context"/g) ?? []).length, 14, "Each capability must include its contextual example rail");
-assert.equal((index.match(/class="chapter-main"/g) ?? []).length, 14, "Each capability must keep its explanation in the left column");
+assert.equal((index.match(/class="chapter-row(?:[\s"])/g) ?? []).length, manifest.chapters.length, "Every chapter must participate in the continuous two-column reading surface");
 assert.match(index, /Completeness failed/, "C12 must show its assurance example alongside the capability");
 assert.equal((index.match(/View the complete chain/g) ?? []).length, 14, "Each contextual rail must point to the single complete-chain example");
 assert.doesNotMatch(index, /Customer 360 Assurance Evidence/, "Detached example-artifact chapters must not interrupt the capability flow");
